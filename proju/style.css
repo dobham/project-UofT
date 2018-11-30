@@ -9,45 +9,25 @@ body{
 	height: 10vh;
 	background-color: lightblue;
 }
-
+#signButtons{
+	position: absolute;
+	top:0;
+	right:0;
+}
 #main{
 	height: 100%;
 	margin-top: 10vh;
 }
-#searchArea{
-}
-
-#navBar{
-	position: sticky;
-	top:0;
-	right:0;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li{
-		float:right;
-}
-
-li a {
-    display: block;
-    color: white;
+#welcomeArea{
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-		/* height: 10vh; */
 }
-
-li a:hover {
-	background-color: #fff;
+#requestArea{
+    display: inline-block;
+    width: 33vw;
+    min-width: 200px;
 }
-#logo{
-	width: 10vh;
-	height: 10vh;
-	float: left;
+#createArea{
+    display: inline-block;
+    width: 33vw;
+    min-width: 200px;
 }
