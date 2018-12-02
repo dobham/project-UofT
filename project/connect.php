@@ -1,7 +1,11 @@
 <?php
   $servername = "localhost";
-  $username = "id8017161_root";
-  $password = "waxyman2002";
-  $database = "id8017161_maindb";
+  $username = "root";
+  $password = "";
+  $database = "maindb";
   $conn = new mysqli($servername, $username, $password,$database);
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  } 
+  echo "connected auccesfully";
 ?>
