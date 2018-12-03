@@ -16,7 +16,6 @@
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
@@ -25,7 +24,10 @@
     <form id="login" action="login.php" method="post">
       <input type="text" name="user" placeholder="Username">
       <input type="password" name="pass" placeholder="Password">
-      <input type="submit">
+      <input type="submit" name="login" value="login">
+    </form>
+    <form id="signup" action="signup.php" method="post">
+      <input type="submit" name="signup" value="signup">
     </form>
   </body>
 </html>
