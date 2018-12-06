@@ -1,8 +1,7 @@
 <?php
 include "connect.php";
-$loggedin=false;
+$loggedIn=false;
 //session_start(); Don't use this until its set up.
-
 if(isset($_SESSION['id'])){ //If logged in through session variables.
     $userID = $_SESSION['id'];
     $sql= "SELECT * FROM login WHERE username='$user'";
@@ -17,6 +16,7 @@ if(isset($_SESSION['id'])){ //If logged in through session variables.
       }else{
         echo "Incorrect login";
       }
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -40,8 +40,10 @@ if ($loggedIn){
 		<button id="loginButton" onclick="">Logout</button> <!--LOGOUT BUTTON-->
 <?php
 }else{
+?>
 		<button id="loginButton" onclick="">Login</button> <!--LOGIN BUTTON-->
 		<button id="signupButton" onclick="">Signup</button> <!--SIGNUP BUTTON-->
+<?php
 }
 ?>
 	</div>
