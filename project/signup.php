@@ -5,7 +5,7 @@
 	<input type="email" name="email" placeholder="Enter Email"><br>
 	<input type="password" name="pass" placeholder="Enter password" id="pass" onkeyup='check();'><br>
 	<input type="password" name="c_pass" placeholder="Confirm password" id="c_pass" onkeyup='check();'><span id='message' ></span><br>
-	<input type="submit" name="signup" value="Sign-Up">
+	<input type="submit" name="create" value="Sign-Up">
 </form>
 <script type="text/javascript">
 	var check = function() {
@@ -21,7 +21,7 @@
 </script>
 <?php
 	include "connect.php";
-	if(isset($_POST['signup'])){
+	if(isset($_POST['create'])){
 		
 		$name = $_POST['name'];
 		$user = $_POST['user'];
