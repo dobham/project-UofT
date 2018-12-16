@@ -5,18 +5,29 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
+<?php
+foreach($_COOKIE as $key => $value){
+  if (isset($_COOKIE[$key])) {
+      unset($_COOKIE[$key]);
+      setcookie($key, '', time() - 3600);
+  }
+}
+?>
 <div id="loginPopTest">
       <script>
-        function onSignIn(googleUser) {
+        function onSignIn(googleUser){
+console.log(document.cookie);
           var profile = googleUser.getBasicProfile();
-          var fName = profile.getGivenName();
-          var lName = profile.getFamilyName();
+          var fname = profile.getGivenName();
+          var lname = profile.getFamilyName();
           var profPic = profile.getImageUrl();
           var email = profile.getEmail();
-          // var userData = [fName, lName, profPic, email];
-          document.cookie = "lName="+lName+";profPic="+profPic+";email="+email;
+          document.cookie = "fname="+fname+ ";";
+          document.cookie = "lname="+lname+ ";";
+          document.cookie = "profPic="+profPic+ ";";
+          document.cookie = "email="+email+ ";";
           console.log(document.cookie);
-        //  window.location.href = "login.php
+          window.location.href = "login.php";
         };
       </script>
       <form id="login" action="login.php" method="post">
@@ -29,8 +40,5 @@
       </form>
       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </div>
-<?php
-print_r($_COOKIE);
-?>
 </body>
 </html>
