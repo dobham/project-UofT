@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="519061711949-jc7dhk910o2f4bpa5f7rnbh9o2gt2e9i.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="519061711949-1ko9fh9st4mnfr5o21ji7ir9e54kkit9.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
@@ -36,7 +36,7 @@
 
 
 <?php
-  if(isset($_POST['login'])){
+  
     session_start();
     include "connect.php";
     $fname = isset($_COOKIE['fname'])?$_COOKIE['fname']:null;
@@ -44,31 +44,33 @@
     $profPic =isset($_COOKIE['profPic'])?$_COOKIE['profPic']:null;
     $email = isset($_COOKIE['email'])?$_COOKIE['email']:null;
     if($fname == null){
-      //normal sign-in
-      $user = $_POST['user'];
-      $pass = $_POST['pass'];
-      $sql= "SELECT password FROM login WHERE username='$user'";
-      $result = $conn->query($sql);
+      if(isset($_POST['login'])){
+        //normal sign-in
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+        $sql= "SELECT password FROM login WHERE username='$user'";
+        $result = $conn->query($sql);
 
-      if($result->num_rows > 0){
-        // output data of each row
-        while($row = $result->fetch_assoc()){
-          if($pass==$row['password']){
-            // someone set up a session var or cookie with all of the data from the db
-            header('location: testHomepage.php');
-          }else{
-            header('location: loginDiv.php');
+        if($result->num_rows > 0){
+          // output data of each row
+          while($row = $result->fetch_assoc()){
+            if($pass==$row['password']){
+              // someone set up a session var or cookie with all of the data from the db
+              header('location: testHomepage.html');
+            }else{
+              header('location: login.php');
+            }
           }
+        }else{
+          echo "0 results";
         }
-      }else{
-        echo "0 results";
+        $conn->close();
       }
-      $conn->close();
     }else{
       //google sign-in
       echo "ur using google sigin".$fname;
     }
-  }
+  
 ?>
 </body>
 </html>
