@@ -69,6 +69,7 @@
     }else{
       //google sign-in
       echo "ur using google sigin".$fname;
+      header('location: testHomepage.html');
     }
   
 ?>
