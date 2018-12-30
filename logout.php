@@ -21,12 +21,16 @@ gapi.auth.setToken(null);
 gapi.auth.signOut();
 </script>
 <?php
+  session_start();
 	foreach($_COOKIE as $key => $value){
 	  if (isset($_COOKIE[$key])) {
 	      unset($_COOKIE[$key]);
 	      setcookie($key, '', time() - 3600);
 	  }
 	}
+  session_destroy();
+  session_unset();
+
 	header('location: login.php');
 ?>
 

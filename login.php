@@ -48,14 +48,16 @@
         //normal sign-in
         $user = $_POST['user'];
         $pass = $_POST['pass'];
+
         $sql= "SELECT password FROM login WHERE username='$user'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
           // output data of each row
+          $_SESSION['user']=$user;
           while($row = $result->fetch_assoc()){
             if($pass==$row['password']){
               // someone set up a session var or cookie with all of the data from the db
-              header('location: testHomepage.html');
+              header('location: homepage.php');
             }else{
               header('location: login.php');
             }
