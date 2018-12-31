@@ -72,6 +72,7 @@ body {
 #searchOverlay{
     position: fixed;
     display: none;
+    opacity: 0;
     width: 100%;
     height: 100%;
     top: 0;
@@ -80,6 +81,7 @@ body {
     bottom: 0;
     background-color: rgba(0,0,0,0.8);
     z-index: 2;
+    transition: 0.5s ease;
 }
 .container{
     position: absolute;
