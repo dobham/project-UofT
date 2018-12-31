@@ -15,10 +15,19 @@ function expand() {
     }
 }
 function searchOverlayOn() {
+    var delayInMilliseconds = 50;
     document.getElementById("searchOverlay").style.display = "block";
+    setTimeout(function() {
+        document.getElementById("searchOverlay").style.opacity = 1;
+    }, delayInMilliseconds);
+
 }
 function searchOverlayOff() {
-    document.getElementById("searchOverlay").style.display = "none";
+    document.getElementById("searchOverlay").style.opacity = 0;
+    var delayInMilliseconds = 500;
+    setTimeout(function() {
+        document.getElementById("searchOverlay").style.display = "none";
+    }, delayInMilliseconds);
 }
 function openSearch() {
     if (document.getElementById("searchBar").style.opacity == 1){
@@ -34,6 +43,3 @@ function openSearch() {
         }
     }
 }
-/*function closeSearch() {
-    document.getElementById("searchBar").style.display = "none";
-}*/
