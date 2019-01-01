@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login/Sign-Up</title>
+    <script src="squareAnimation.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div id="layerOne"></div>
+<div id="layerTwo"></div>
+<div id="layerMain">
+    <div id="loginTitleBox">
+        <div id="loginTitle">Login Into Account</div>
+    </div>
+        <div id="contentLogin">
+            <form class="indexForm" id="login_form">
+                <input type="email" placeholder="  School Email" class="indexInput" id="login_email">
+                <br>
+                <input type="password" placeholder="  Password" class="indexInput" id="login_password">
+                <!--ADD LINK TO ACCOUNT RECOVERY-->
+                <a class="reoveryLink" href="#">Recover password</a>
+            </form>
+            <button type="submit" class="indexFormSubmitButton" form="login_form">Login</button>
+        </div>
+        <div id="signupTitleBox">
+            <div id="signupTitle">Sign-Up Now!</div>
+        </div>
+        <div id="contentSignup">
+            <form class="indexForm" id="signup_form">
+                <input type="email" placeholder="  School Email" class="indexInput" id="signup_email">
+                <br>
+                <input type="password" placeholder="  Password" class="indexInput" id="sighup_password">
+            </form>
+            <button type="submit" class="indexFormSubmitButton" form="signup_form">Login</button>
+        </div>
+</div>
+<canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>
+</body>
+</html>

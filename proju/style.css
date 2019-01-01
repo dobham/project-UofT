@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-	position: relative;
+	background-color:lightgrey;
 }
 #header{
 	position: fixed;
@@ -15,7 +15,19 @@ body{
 	right:0;
 }
 #main{
-	position: absolute;
-	top: 10vh;
-	background-color:lightgrey;
+	height: 100%;
+	margin-top: 10vh;
+}
+#welcomeArea{
+    text-align: center;
+}
+#requestArea{
+    display: inline-block;
+    width: 33vw;
+    min-width: 200px;
+}
+#createArea{
+    display: inline-block;
+    width: 33vw;
+    min-width: 200px;
 }

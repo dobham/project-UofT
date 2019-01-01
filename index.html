@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Uni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js"></script>
+    <script src="squareAnimation.js"></script>
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+    <a class="active">
+        Project University
+    </a>
+    <a class="option">
+        Login
+    </a>
+    <a class="option">
+        Signup
+    </a>
+    <a class="option">
+        About
+    </a>
+    <a href="javascript:void(0);" class="icon" onclick="expand()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<div class="side" id="sideResponsive">
+    <a class="optionResponsive">
+        Login
+    </a>
+    <a class="optionResponsive">
+        Signup
+    </a>
+    <a class="optionResponsive">
+        About
+    </a>
+</div>
+<div id="searchOverlay">
+    <h1 id="overlayText">
+        Join the community now! <br>
+        Search for a Project!
+    </h1>
+    <input id="searchBar" placeholder="Find a project to work on now!"><button id="searchButton" onclick="openSearch()"><i class="fa fa-search"></i></button>
+    <button onclick="searchOverlayOff()" id="searchClose">Close</button>
+</div>
+<div class="container" id="createContainer">
+    <div id="create">
+        <h2 id="createInfo">
+            Have a project idea? <br>
+            Want it to get made?
+        </h2>
+        <button id="createButton">Get started now!</button>
+    </div><div id="search">
+        <h2 id="searchInfo">
+            Search For Projects, Gain Expereince, Add It To Your Resume!
+        </h2>
+        <div id="searchRow">
+            <button id="searchOverlayButton" onclick="searchOverlayOn()">Search Now</button>
+        </div>
+    </div>
+</div>
+<div class="container" id="aboutContainer">
+    <div id="about">
+        <h2 id="aboutInfo">
+            What is this?
+        </h2>
+        <p id="aboutText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam metus nulla, aliquam nec molestie vitae, interdum eget lorem. Curabitur rhoncus risus sapien, nec ornare purus l Donec scelerisque massa velit, eu interdum tellus auctor in. Nam sit amet risus interdum, faucibus mi vel, viverra mi. Sed sit amet magna in dolor hendrerit accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi blandit tempor ornare. Donec ornare sem a sem commodo semper. Mauris maximus lectus facilisis purus molestie molestie in a mi. Fusce eu ante feugiat, interdum leo vel, tristique leo. Curabitur auctor est purus, sit amet laoreet purus congue eget. Vivamus auctor est sit amet eros vehicula, non facilisis nisl aliquet.
+            aoreet non. Donec aliquam nibh est, eget ultrices enim ornare sit amet. Suspendisse quis magna tempor nulla placerat auctor vitae vel mi. Pellentesque efficitur elementum porttitor. Morbi mauris quam, auctor ut lectus eget, tempus sagittis dui. Praesent leo arcu, cursus ac neque nec, tincidunt malesuada leo. In condimentum vulputate lacus ut facilisis. Suspendisse ultrices libero vel dui fringilla molestie. Integer nisl lectus, cursus a lectus ac, luctus elementum enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus facilisis, neque at pulvinar euismod, elit ipsum bibendum risus, eu vulputate lectus mi sed lectus. Sed erat mauris, sodales rhoncus mattis et, gravida id neque. Vivamus dictum, erat vitae tristique efficitur, orci risus dignissim sapien, eu bibendum sapien velit fringilla tortor.
+        </p>
+    </div>
+</div>
+<div class="container" id="teamContainer">
+    <div id="team">
+        <h2 id="teamInfo">
+            Who are we?
+        </h2>
+        <div class="member" id="anthony">
+            <img src="NOT%20-%20Copy.jpg" class="memberImage">
+            <h3 class="name">
+                Anthony Bertnyk
+            </h3>
+            <p class="memberInfo">
+                Bunch of words about me
+            </p>
+        </div><div class="member" id="aryan">
+            <img src="ARYANNN.png" class="memberImage">
+            <h3 class="name">
+                Aryan Gajeli
+            </h3>
+            <p class="memberInfo">
+                Bunch of words about me
+            </p>
+        </div><div class="member" id="mahbod">
+            <img src="big%20sahd.png" class="memberImage">
+            <h3 class="name">
+                Mahbod Sabbaghi
+            </h3>
+            <p class="memberInfo">
+                Bunch of words about me
+            </p>
+        </div><div class="member" id="azfar">
+            <img src="celeb-closeup-james-franco.jpg" class="memberImage">
+            <h3 class="name">
+                Azfar Choudhry
+            </h3>
+            <p class="memberInfo">
+                Bunch of words about me
+            </p>
+        </div>
+    </div>
+</div>
+<canvas id="canvas" height="100%" width="100%"></canvas>
+</body>
+</html>
