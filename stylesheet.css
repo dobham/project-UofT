@@ -551,6 +551,18 @@ button {
     color: #40e080;
     padding: 1vh;
 }
+#signupTitleBox {
+    width: 100%;
+    text-align: center;
+    margin-top: 35vh;
+}
+#signupTitle {
+    display: inline-block;
+    font-size: 4vh;
+    border-radius: 10%;
+    color: #40e080;
+    padding: 1vh;
+}
 #contentLogin{
     position: absolute;
     width: 33%;
