@@ -40,6 +40,7 @@
 		    echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 		$conn->close();
-		header('location: testHomepage.html');
+		mkdir('uploads/'.$user);
+		header('location: homepage.php');
 	}
 ?>
