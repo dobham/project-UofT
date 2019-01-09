@@ -4,7 +4,7 @@
 	<title>test homepage</title>
 </head>
 <body>
-	<link rel="stylesheet" href="dragDrop.css" />
+	<link rel="stylesheet" href="includes/dragDrop.css" />
 	<?php
 
 		session_start();
@@ -18,7 +18,9 @@
 	<form method="post" action="logout.php">
 		<input type="submit" name="logout" value="logout">
 	</form>
-
+	<form method="post" action="workPage.php">
+		<input type="submit" name="work" value="I Want To Work">
+	</form>
 	<!-- <form action="upload.php" method="post" enctype="multipart/form-data">
 
 	    <input type="file" name="uploaded_file" id="fileToUpload" >
@@ -49,7 +51,7 @@
 			<p>Status Messages</p>
 			</div>
 		</div>
-			<script src="dragDrop.js"></script>
+			<script src="includes/dragDrop.js"></script>
 
 </body>
 </html>

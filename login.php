@@ -38,7 +38,7 @@
 <?php
   
     session_start();
-    include "connect.php";
+    include "includes/connect.php";
     $fname = isset($_COOKIE['fname'])?$_COOKIE['fname']:null;
     $lname = isset($_COOKIE['lname'])?$_COOKIE['lname']:null;
     $profPic =isset($_COOKIE['profPic'])?$_COOKIE['profPic']:null;
