@@ -3,7 +3,7 @@
 	// if(isset($_FILES['uploaded_file'])) {
 	//     // Make sure the file was sent without errors
 	//     if($_FILES['uploaded_file']['error'] == 0) {
-
+	        
 	//         include "connect.php";
 	//         $name = $conn->real_escape_string($_FILES['uploaded_file']['name']);
 	//         $mime = $conn->real_escape_string($_FILES['uploaded_file']['type']);
@@ -13,7 +13,7 @@
 	//             	VALUES ('{$name}', '{$mime}', {$size}, '{$data}', NOW())";
 
 	//         $result = $conn->query($sql);
-
+	 
 	//         if($result) echo 'Success! Your file was successfully added!';
 	//         else echo 'Error! Failed to insert the file'."<pre>{$conn->error}</pre>";
 	//     }
@@ -33,24 +33,24 @@
     $errors = []; // Store all foreseen and unforseen errors here
 
     //$fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
-		print_r($_FILES['fileselect']);
-    $fileName = $_FILES['fileselect']['name'];
-    $fileSize = intval($_FILES['fileselect']['size']);
-    $fileTmpName  = $_FILES['fileselect']['tmp_name'];
-    $fileType = $_FILES['fileselect']['type'];
+
+    $fileName = $_FILES['uploaded_file']['name'];
+    $fileSize = intval($_FILES['uploaded_file']['size']);
+    $fileTmpName  = $_FILES['uploaded_file']['tmp_name'];
+    $fileType = $_FILES['uploaded_file']['type'];
     //$fileExtension = strtolower(end(explode('.',$fileName)));
 
-    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+    $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
 
-    if (isset($_FILES['fileselect'])) {
+    if (isset($_FILES['uploaded_file'])) {
 
         // if (! in_array($fileExtension,$fileExtensions)) {
         //     $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
         // }
 
-        // if ($fileSize > 2000000) {
-        //     $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
-        // }
+        if ($fileSize > 2000000) {
+            $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
+        }
 
         if (empty($errors)) {
             $didUpload = move_uploaded_file($fileTmpName, $uploadPath);

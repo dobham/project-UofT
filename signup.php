@@ -20,7 +20,7 @@
 }
 </script>
 <?php
-	include "includes/connect.php";
+	include "connect.php";
 	if(isset($_POST['create'])){
 		
 		$name = $_POST['name'];

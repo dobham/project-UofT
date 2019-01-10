@@ -7,7 +7,7 @@
   <body>
 
     <div id="loginPopTest">
-      <script>
+     <!--  <script>
         function onSignIn(googleUser){
           console.log(document.cookie);
           var profile = googleUser.getBasicProfile();
@@ -22,7 +22,7 @@
           console.log(document.cookie);
           window.location.href = "login.php";
         };
-      </script>
+      </script> -->
         <form id="login" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
           <input type="text" name="user" placeholder="Username">
           <input type="password" name="pass" placeholder="Password">
@@ -38,7 +38,7 @@
 <?php
   
     session_start();
-    include "includes/connect.php";
+    include "connect.php";
     $fname = isset($_COOKIE['fname'])?$_COOKIE['fname']:null;
     $lname = isset($_COOKIE['lname'])?$_COOKIE['lname']:null;
     $profPic =isset($_COOKIE['profPic'])?$_COOKIE['profPic']:null;
@@ -70,7 +70,7 @@
     }else{
       //google sign-in
       echo "ur using google sigin".$fname;
-      header('location: testHomepage.html');
+      header('location: homepage.php');
     }
   
 ?>

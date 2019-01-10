@@ -1,5 +1,5 @@
 <?php
-include "includes/connect.php";
+include "connect.php";
 $loggedIn=false;
 //session_start(); Don't use this until its set up.
 if(isset($_SESSION['id'])){ //If logged in through session variables.
@@ -22,8 +22,8 @@ if(isset($_SESSION['id'])){ //If logged in through session variables.
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="includes/style.css" />
-    <script src="includes/script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
 <title>Page Title</title>
 </head>
 <body>
