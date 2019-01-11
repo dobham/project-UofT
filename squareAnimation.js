@@ -52,10 +52,6 @@ window.onload = function start() {
         }
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.beginPath();
-        ctx.moveTo(0, spawnLineY);
-        ctx.lineTo(canvas.width, spawnLineY);
-        ctx.stroke();
         for (var i = 0; i < objectsWhite.length; i++) {
             var object = objectsWhite[i];
             object.y += spawnRateOfDescentWhite;
