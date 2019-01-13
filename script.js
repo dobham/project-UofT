@@ -14,6 +14,9 @@ function expand() {
         x.className = "topnav";
     }
 }
+
+
+
 function searchOverlayOn() {
     var delayInMilliseconds = 50;
     document.getElementById("searchOverlay").style.display = "block";
@@ -29,6 +32,9 @@ function searchOverlayOff() {
         document.getElementById("searchOverlay").style.display = "none";
     }, delayInMilliseconds);
 }
+
+
+
 function openSearch() {
     if (document.getElementById("searchBar").style.opacity == 1){
         document.getElementById("searchBar").style.opacity = 0;
@@ -42,4 +48,18 @@ function openSearch() {
             document.getElementById("searchBar").style.width = "450px";
         }
     }
+}
+
+
+function switchLogin(){
+    document.getElementById("layerLogin").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    document.getElementById("layerLogin").style.transform = "translateX(100%)";
+    document.getElementById("loginButtonContainer").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    document.getElementById("loginButtonContainer").style.left = "-4%";
+}
+function switchSignup(){
+    document.getElementById("layerLogin").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    document.getElementById("layerLogin").style.transform = "translateX(-0%)";
+    document.getElementById("loginButtonContainer").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    document.getElementById("loginButtonContainer").style.left = "4%";
 }
