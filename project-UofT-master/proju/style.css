@@ -1,0 +1,33 @@
+body{
+	margin: 0;
+	background-color:lightgrey;
+}
+#header{
+	position: fixed;
+	top:0;
+	width: 100%;
+	height: 10vh;
+	background-color: lightblue;
+}
+#signButtons{
+	position: absolute;
+	top:0;
+	right:0;
+}
+#main{
+	height: 100%;
+	margin-top: 10vh;
+}
+#welcomeArea{
+    text-align: center;
+}
+#requestArea{
+    display: inline-block;
+    width: 33vw;
+    min-width: 200px;
+}
+#createArea{
+    display: inline-block;
+    width: 33vw;
+    min-width: 200px;
+}

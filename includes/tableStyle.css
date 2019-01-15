@@ -1,0 +1,38 @@
+body {
+     font: Arial;
+}
+ th {
+     background-color:#94989e;
+    word-wrap: normal;
+}
+ td {
+     font-size: 10pt;
+    overflow: hidden;
+     max-width: 1%;
+     word-wrap: normal;
+}
+ tr:hover{
+    background-color:#ddd;
+    cursor: pointer
+}
+ .selected{
+    background-color: red;
+    color: #fff;
+    font-weight: bold
+}
+ tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+tr:nth-child(odd):hover {
+   background-color: #ddd;
+}
+ table {
+     vertical-align: bottom;
+     text-align: center;
+     border-collapse: collapse;
+
+}
+ table, th, td {
+     border: 1px solid black;
+     padding: 3%;
+}
