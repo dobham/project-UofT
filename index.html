@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project Uni</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
@@ -10,16 +11,16 @@
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="active">
+    <a class="option active" href="./index.html">
         Project University
     </a>
-    <a class="option">
+    <a class="option" href="./login.html">
         Login
     </a>
-    <a class="option">
+    <a class="option" href="./signup.html">
         Signup
     </a>
-    <a class="option">
+    <a class="option" href="./about.html">
         About
     </a>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
@@ -51,8 +52,11 @@
             Have a project idea? <br>
             Want it to get made?
         </h2>
-        <button id="createButton">Get started now!</button>
-    </div><div id="search">
+		<div id="createRow">
+			<button id="createButton">Get started!</button>
+		</div>
+    </div
+	><div id="search">
         <h2 id="searchInfo">
             Search For Projects, Gain Expereince, Add It To Your Resume!
         </h2>
