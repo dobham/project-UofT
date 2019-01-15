@@ -8,30 +8,34 @@ body {
 #canvas {
     z-index: -1;
     position: absolute;
-    display: inline;
-    bottom: -116.5%;
+	top: 0;
+	width: calc(100vw - 18px);
+	height: 100vh;
+	border: none;
 }
 .topnav {
+	width: 100%;
+	position: fixed;
+	top: 0;
     overflow: hidden;
-    background-color: #212529;
+    background-color: rgba(0, 0, 0, 0.8);
+	height: 10vh;
+	z-index: 30;
 }
 
 .topnav .option {
+	height: 100%;
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 1% 1%;
+    padding: 0 5px 0 5px;
     text-decoration: none;
-    font-size: 1.25vw;
+    font-size: 15px;
+	line-height: 10vh;
+	transition: 0.3s;
 }
 .topnav .active {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1% 1%;
-    text-decoration: none;
     font-size: 25px;
 }
 
@@ -49,7 +53,7 @@ body {
     display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         position: absolute;
@@ -59,7 +63,7 @@ body {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
         position: absolute;
@@ -90,27 +94,26 @@ body {
     transition: 0.5s ease;
 }
 .container{
-    position: absolute;
     width: 99%;
-    height: 60%;
     z-index: 1;
 }
 #createContainer{
     width: 99%;
+	height: 89vh;
+	margin-top: 11vh;
+	text-align: center;
 }
 #create{
-    position: relative;
-    border-right: #ececec solid 2px;
+    border-bottom: #ececec solid 2px;
     height: 98%;
     width: 95%;
-    padding-right: 15px;
-    padding-left: 15px;
     display: inline-block;
+    vertical-align: top;
+	position: relative;
 }
 #createInfo{
     text-align: center;
     color: white;
-    position: absolute;
     left: 20%;
     top: 10%;
     font-size: 50px;
@@ -150,6 +153,12 @@ button {
     font-weight: 700;
     cursor: pointer;
 }
+#createRow {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
 #createButton {
     letter-spacing: 0.25em;
     margin: 0 auto;
@@ -158,11 +167,10 @@ button {
     outline: none;
     color: #333333;
     border: none;
-    position: absolute;
-    left: 38%;
-    top: 50%;
     font-size: 25px;
     z-index: 1;
+    position: relative;
+
 }
 #createButton:after, #createButton:before {
     content: "";
@@ -195,17 +203,14 @@ button {
 }
 
 #search{
-    position: absolute;
     height: 98%;
     width: 95%;
-    padding-right: 15px;
-    padding-left: 15px;
     display: inline-block;
-
+    vertical-align: top;
+	position: relative;
 }
 #searchInfo{
     text-align: center;
-    position: absolute;
     color: white;
     font-size: 50px;
     top: 10%;
@@ -259,6 +264,12 @@ button {
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
     background-color:#0061a7;
 }*/
+#searchRow {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
 
 #searchOverlayButton {
     letter-spacing: 0.25em;
@@ -268,9 +279,7 @@ button {
     outline: none;
     color: #333333;
     border: none;
-    position: absolute;
-    left: 38%;
-    top: 50%;
+    position: relative;
     font-size: 25px;
     z-index: 1;
 }
@@ -418,6 +427,8 @@ button {
 @media (min-width: 768px){
     #create{
         max-width: 45%;
+		border-right: #ececec solid 2px;
+		border-bottom: none;
     }
     #search{
         max-width: 47%;
@@ -425,8 +436,7 @@ button {
 }
 @media (max-width: 768px){
     #aboutContainer{
-        position: relative;
-        margin-top: 125vh;
+		margin-top: 90vh;
     }
     #teamContainer{
         position: relative;
@@ -435,7 +445,6 @@ button {
 }
 #aboutContainer{
     text-align: center;
-    top: 70%;
 }
 #about{
 }
@@ -479,12 +488,11 @@ button {
 }
 .member:before {
     background-color: #40e080;
-    top: -4px;
     left: -2rem;
 }
 .member:after {
     background-color: white;
-    top: 1.5rem;
+    top: 0;
     left: 3.1rem;
     width: 80%;
 }
@@ -501,6 +509,7 @@ button {
 .memberImage{
     border-radius: 10px;
     margin-left: 60px;
+	margin-top: 5px;
     width: 150px;
     height: 150px;
 }
