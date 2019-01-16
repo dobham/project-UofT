@@ -9,13 +9,14 @@
   $user = $row['host'];
   $projName = $row['project_name'];
   $description = $row['comments'];
+  $date = substr($row['creation'],0,10);
   ?>
   <h1><?php echo $projName; ?></h1>
 </head>
 <body>
-<p1><?php echo "by: ".$user; ?></p1>
+<p1><?php echo "Date published ".$date; ?></p1>
 <br><br>
-<p1><?php echo "Description <br>".$description; ?></p1>
+<p1><?php echo "<b>Description </b><br><br>".$description; ?></p1>
 
 </body>
 </html>
