@@ -545,7 +545,7 @@ button {
      z-index: 2;
      box-shadow: -1px 0 10px black;
  }
- #layerProfile{
+#layerProfile{
      position: absolute;
      right: 0;
      width: 80vw;
@@ -554,15 +554,27 @@ button {
      z-index: 2;
      box-shadow: -1px 0 10px black;
  }
- #layerSideProfile{
-     position: absolute;
-     right: 0;
-     width: 20vw;
-     height: 100vh;
-     background-color: #616569;
-     z-index: 3;
-     box-shadow: -1px 0 10px black;
+#topPref{
+    position: absolute;
+    right: 0;
+    width: 20vw;
+    height: 93vh;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
  }
+#bottomPref{
+    position: absolute;
+    right: 0;
+    top: 93vh;
+    width: 20vw;
+    height: 7vh;
+    border-radius: 10px;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+}
+
 #layerLogin{
     position: absolute;
     right: 0;
@@ -597,6 +609,10 @@ button {
     margin-top: 5px;
     width: 150px;
     height: 150px;
+}
+#submitProfile{
+    height: 7vh;
+    bottom: 0;
 }
 #nickname{
     position: absolute;
@@ -653,7 +669,7 @@ button {
     color: white;
 }
 .imageChooser{
-    top: 46vh;
+    top: 41vh;
     left: 6vw;
     position: absolute;
     text-align: center;
