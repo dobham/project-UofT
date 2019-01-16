@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login/Sign-Up</title>
     <script src="squareAnimation.js"></script>
     <script src="script.js"></script>
@@ -10,8 +11,43 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+<div class="topnav" id="myTopnav">
+    <a class="option active" href="./index.html">
+        Project University
+    </a>
+    <a class="option" href="./login.html">
+        Login
+    </a>
+    <a class="option" href="./signup.html">
+        Signup
+    </a>
+    <a class="option" href="./about.html">
+        About
+    </a>
+    <a href="javascript:void(0);" class="icon" onclick="expand()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<div class="side" id="sideResponsive">
+    <a class="optionResponsive">
+        Login
+    </a>
+    <a class="optionResponsive">
+        Signup
+    </a>
+    <a class="optionResponsive">
+        About
+    </a>
+</div>
+
 <div id="layerOne"></div>
 <div id="layerSignup">
+    <div class="topTitleContainer">
+        <div class="topTitle">Project University</div>
+    </div>
+    <div class="signTitleBox">
+        <div class="signTitle">Login Into Account</div>
+    </div>
     <div id="contentSignup">
         <form class="indexForm" id="signup_form">
             <input type="email" placeholder="  School Email" class="indexInput" id="signup_email">
@@ -20,23 +56,23 @@
         </form>
         <button type="submit" class="indexFormSubmitButton" form="signup_form">Login</button>
     </div>
-    <div class="switchLayer" id="loginButtonContainer">
+    <div class="switchLayer">
         <div id="loginButton" class="titleUnderline" onclick="switchSignup()"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>   Sign-Up Now!</div>
     </div>
 </div>
 <div class="outerLayer">
 <div id="layerLogin">
-    <div id="topTitleContainer">
-        <div id="topTitle">Project University</div>
+    <div class="topTitleContainer">
+        <div class="topTitle">Project University</div>
     </div>
-    <div id="loginTitleBox">
-        <div id="loginTitle">Login Into Account</div>
+    <div class="signTitleBox">
+        <div class="signTitle">Login Into Account</div>
     </div>
         <div id="contentLogin">
             <form class="indexForm" id="login_form">
-                <input type="email" placeholder="  School Email" class="indexInput" id="login_email">
+                <input type="email" placeholder="School Email" class="indexInput" id="login_email">
                 <br>
-                <input type="password" placeholder="  Password" class="indexInput" id="login_password">
+                <input type="password" placeholder="Password" class="indexInput" id="login_password">
                 <!--ADD LINK TO ACCOUNT RECOVERY-->
                 <a class="reoveryLink" href="#">Recover password</a>
             </form>

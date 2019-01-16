@@ -75,7 +75,7 @@ body {
     visibility: hidden;
     height: 100%;
     width: 100%;
-    border: 5px #148dff solid;
+    /*border: 5px #148dff solid;*/
     right: 0;
     transition: 0.5s ease;
 }
@@ -553,13 +553,13 @@ button {
     z-index: 3;
     box-shadow: -1px 0 10px black;
 }
-#loginTitleBox {
+.signTitleBox {
     width: 100%;
     text-align: center;
-    margin-top: 35vh;
+    top: 35vh;
     position: absolute;
 }
-#loginTitle {
+.signTitle {
     display: inline-block;
     font-size: 4vh;
     border-radius: 10%;
@@ -567,11 +567,10 @@ button {
     padding: 1vh;
 }
 .switchLayer {
-    width: 100%;
     text-align: center;
-    margin-top: 75vh;
-    margin-left: -26vw;
-    cursor: pointer;
+    top: 85vh;
+	left: 5vw;
+	position: absolute;
 }
 #signupButton {
     display: inline-block;
@@ -613,8 +612,27 @@ button {
     position: absolute;
     width: 33%;
     height: 20%;
-    top: 60%;
+    top: 50%;
     left: 33%;
+}
+@media (max-width: 600px){
+    #layerLogin{
+		width: 95vw;
+	}
+    #layerSignup{
+		width: 99vw;
+	}
+}
+
+.topTitleContainer{
+	width: 100%;
+	z-index: 5;
+    color: #40e080;
+	text-align: center;
+	margin-top: 15vh;
+}
+.topTitle{
+	font-size: calc(10px + 3vw);
 }
 .titleUnderline{
     display: inline-block;
