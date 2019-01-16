@@ -63,3 +63,19 @@ function switchSignup(){
     document.getElementById("loginButtonContainer").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
     document.getElementById("loginButtonContainer").style.left = "4%";
 }
+
+
+var close = true;
+function prefOpen(){
+    document.getElementById("topPref").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    console.log(close);
+    if(close){
+        document.getElementById("topPref").style.right = "0";
+        close = false;
+        console.log(close);
+    }
+    else if (!close){
+        document.getElementById("topPref").style.right = "-20vw";
+        close = true;
+    }
+}

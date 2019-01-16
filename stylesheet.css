@@ -556,7 +556,7 @@ button {
  }
 #topPref{
     position: absolute;
-    right: 0;
+    right: -20vw;
     width: 20vw;
     height: 93vh;
     background-color: #616569;
@@ -603,12 +603,13 @@ button {
     top: 16vh;
     position: absolute;
 }
-#profileImageUpload{
-    border-radius: 90px;
-    margin-left: 60px;
-    margin-top: 5px;
-    width: 150px;
-    height: 150px;
+.profileImageUpload{
+    border-radius: 500px;
+    width: 15vw;
+    height: 30vh;
+    position: absolute;
+    right: 6vh;
+    top: 11vh;
 }
 #submitProfile{
     height: 7vh;
@@ -668,6 +669,24 @@ button {
     text-align: center;
     color: white;
 }
+
+#openPref {
+    display: inline-block;
+    font-size: 4vh;
+    border-radius: 10%;
+    color: #40e080;
+    padding: 1vh;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 42vh;
+    right: 2.5vw;
+}
+#openPref:hover{
+    color: white;
+    transition: 0.25s ease;
+}
+
+
 .imageChooser{
     top: 41vh;
     left: 6vw;
