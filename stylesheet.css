@@ -535,13 +535,32 @@ button {
     background-color: #2f3337;
     z-index: 1;
     box-shadow: -1px 0 10px black;
-}#layerSignup{
+}
+#layerSignup{
      position: absolute;
      right: 0;
      width: 75vw;
      height: 100vh;
      background-color: #4d5155;
      z-index: 2;
+     box-shadow: -1px 0 10px black;
+ }
+ #layerProfile{
+     position: absolute;
+     right: 0;
+     width: 80vw;
+     height: 100vh;
+     background-color: #4d5155;
+     z-index: 2;
+     box-shadow: -1px 0 10px black;
+ }
+ #layerSideProfile{
+     position: absolute;
+     right: 0;
+     width: 20vw;
+     height: 100vh;
+     background-color: #616569;
+     z-index: 3;
      box-shadow: -1px 0 10px black;
  }
 #layerLogin{
@@ -558,6 +577,99 @@ button {
     text-align: center;
     top: 35vh;
     position: absolute;
+}
+#titleBoxProfile{
+    width: 100%;
+    text-align: center;
+    top: 16vh;
+    left: -11vw;
+    position: absolute;
+}
+#titleBoxSide{
+    width: 100%;
+    text-align: center;
+    top: 16vh;
+    position: absolute;
+}
+#profileImageUpload{
+    border-radius: 90px;
+    margin-left: 60px;
+    margin-top: 5px;
+    width: 150px;
+    height: 150px;
+}
+#nickname{
+    position: absolute;
+    top: 62%;
+    left: 10%;
+    width: 80%;
+    height: 5.5%;
+    background-color: #a3dea5;
+    border-color: #a3dea5;
+    border-radius: 5px;
+}
+#nickname:hover{
+    width: 81%;
+}
+#nickname:focus{
+    width: 83%;
+}
+#profileEmail{
+    position: absolute;
+    top: 71%;
+    left: 10%;
+    width: 80%;
+    height: 5.5%;
+    background-color: #a3dea5;
+    border-color: #a3dea5;
+    border-radius: 5px;
+}
+#profileEmail:hover{
+    width: 81%;
+}
+#profileEmail:focus{
+    width: 83%;
+}
+#gitHubLink{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    width: 80%;
+    height: 5.5%;
+    background-color: #a3dea5;
+    border-color: #a3dea5;
+    border-radius: 5px;
+}
+#gitHubLink:hover{
+    width: 81%;
+}
+#gitHubLink:focus{
+    width: 83%;
+}
+#profileName{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    color: white;
+}
+.imageChooser{
+    top: 46vh;
+    left: 6vw;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    width: 7.8vw;
+    height: 4vh;
+    border-color: #fbfbfb;
+    background-color: #fbfbfb;
+    transition: all 0.2s;
+    cursor: pointer;
+    color: #40E080;
+}
+.imageChooser:hover, .imageChooser:focus{
+    border-color: rgb(64, 224, 128);
+    background-color: rgb(64, 224, 128);
+    color: white;
 }
 .signTitle {
     display: inline-block;

@@ -6,7 +6,6 @@
     <script src="squareAnimation.js"></script>
     <script src="script.js"></script>
     <script src="sketch.js"></script>
-    <script src="sideParticles.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
 </head>
@@ -39,5 +38,32 @@
         About
     </a>
 </div>
+<div id="layerProfile">
+    <div id="titleBoxProfile">
+        <div class="signTitle">Welcome, {Name}! Create your account!</div>
+    </div>
+    <div id="contentProfile">
+
+    </div>
+</div>
+<div class="outerLayer">
+    <div id="layerSideProfile">
+        <div id="titleBoxSide">
+            <div class="signTitle">Preferences</div>
+        </div>
+        <div id="contentProfileSide">
+            <img src="img_avatar.png" id="profileImageUpload" style="left: 15%;top: 30%;position: absolute;">
+            <button class="imageChooser">Choose an Image</button> <!-- Opens explorer of some kind to pick an image -->
+            <h2 id="profileName">{Name Chosen in the sign-up Page}</h2>
+            <form>
+                <input  placeholder="Nickname" class="indexInput" id="nickname">
+                <input  placeholder="Profile Email" class="indexInput" id="profileEmail">
+                <input  placeholder="GitHub Link" class="indexInput" id="gitHubLink"> <!--In case they want to display a link to their other projects maybe-->
+            </form>
+        </div>
+    </div>
+</div>
+<canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>
+<script src="sideParticles.js"></script>
 </body>
 </html>
