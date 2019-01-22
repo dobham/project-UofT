@@ -163,7 +163,7 @@ button {
 #createButton {
     letter-spacing: 0.25em;
     margin: 0 auto;
-    padding: 1rem 2.5rem;
+    padding: 10px;
     background: transparent;
     outline: none;
     color: #333333;
@@ -177,7 +177,7 @@ button {
     content: "";
     position: absolute;
     height: 100%;
-    width: 45%;
+    width: 50%;
     transform: skewX(10deg);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: -2;
@@ -185,22 +185,22 @@ button {
 #createButton:before {
     background-color: white;
     top: -0.5rem;
-    left: 20px;
+    left: 00px;
 }
 #createButton:after {
     background-color: #40e080;
     top: 0.5rem;
-    left: 160px;
+    left: 50%;
 }
 #createButton:hover:before, #createButton:hover:after {
     top: 0;
     transform: skewx(0deg);
 }
 #createButton:hover:after {
-    left: 20px;
+    left: 0;
 }
 #createButton:hover:before {
-    left: 160px;
+    left: 50%;
 }
 
 #search{
@@ -276,7 +276,7 @@ button {
 #searchOverlayButton {
     letter-spacing: 0.25em;
     margin: 0 auto;
-    padding: 1rem 2.5rem;
+    padding: 10px;
     background: transparent;
     outline: none;
     color: #333333;
@@ -290,7 +290,7 @@ button {
     content: "";
     position: absolute;
     height: 100%;
-    width: 45%;
+    width: 50%;
     transform: skewX(10deg);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: -2;
@@ -298,22 +298,22 @@ button {
 #searchOverlayButton:before {
     background-color: #40e080;
     top: 0;
-    left: 20px;
+    left: 0px;
 }
 #searchOverlayButton:after {
     background-color: white;
     top: 0.5rem;
-    left: 160px;
+    left: 50%;
 }
 #searchOverlayButton:hover:before, #searchOverlayButton:hover:after {
     top: 0;
     transform: skewx(0deg);
 }
 #searchOverlayButton:hover:after {
-    left: 20px;
+    left: 0px;
 }
 #searchOverlayButton:hover:before {
-    left: 160px;
+    left: 50%;
 }
 
 
