@@ -561,6 +561,7 @@ button {
      background-color: #4d5155;
      z-index: 2;
      box-shadow: -1px 0 10px black;
+	 overflow-y: auto;
  }
 #layerLogin{
     position: absolute;
@@ -574,15 +575,13 @@ button {
 .signTitleBox {
     width: 100%;
     text-align: center;
-    top: 35vh;
-    position: absolute;
+    margin-top: 5vh;
 }
 .signTitle {
     display: inline-block;
     font-size: 4vh;
     border-radius: 10%;
     color: #40e080;
-    padding: 1vh;
 }
 .switchLayer {
     text-align: center;
@@ -620,18 +619,12 @@ button {
     top: 16%;
 }
 #contentLogin{
-    position: absolute;
-    width: 33%;
-    height: 20%;
-    top: 50%;
-    left: 33%;
+    height: 20vh;
+    margin-top: 15vh;
 }
 #contentSignup{
-    position: absolute;
-    width: 33%;
-    height: 20%;
-    top: 50%;
-    left: 33%;
+    height: 20vh;
+    margin-top: 5vh;
 }
 @media (max-width: 600px){
     #layerLogin{
@@ -668,22 +661,22 @@ button {
     transform: scaleX(1);
 }
 .indexForm{
-    height:100%;
+	text-align: center;
 }
 .indexInput{
-    height: 30%;
-    width: 100%;
+    height: 5vh;
+    width: 33%;
+	border-radius: 5px;
+	padding-left: 5px;
     transition: 0.2s ease;
-    padding-left: 3%;
 }
 .indexInput:focus{
     transition: all 0.5s;
-    width: 105%;
+    width: 35%;
 }
 .indexFormSubmitButton {
-    position: absolute;
-    width: 100%;
-    height: 35%;
+    width: 33%;
+    height: 6vh;
     border-color: #fbfbfb;
     border-radius: 10px;
     background-color: #fbfbfb;
@@ -692,12 +685,17 @@ button {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     font-size:150%;
+	margin-top: 10px;
 }
 .indexFormSubmitButton:hover, .indexFormSubmitButton:focus{
     border-color: rgb(64, 224, 128);
     background-color: rgb(64, 224, 128);
     color: white;
 }
+#message{
+	position: absolute;
+	top: calc(49vh + 33px + 3vw);
+	left: 70%;
 /*
 #layer2 {
     height: 100%;

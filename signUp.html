@@ -10,6 +10,18 @@
     <script src="sideParticles.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
+<script type="text/javascript">
+	var check = function() {
+	if(document.getElementById('pass').value ==
+		document.getElementById('c_pass').value) {
+		document.getElementById('message').style.color = 'green';
+		document.getElementById('message').innerHTML = 'Matching';
+	}else{
+		document.getElementById('message').style.color = 'red';
+		document.getElementById('message').innerHTML = 'Not Matching';
+	}
+}
+</script>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
@@ -47,18 +59,18 @@
         <div class="topTitle">Project University</div>
     </div>
     <div class="signTitleBox">
-        <div class="signTitle">Login Into Account</div>
+        <div class="signTitle">Log In</div>
     </div>
-    <div id="contentSignup">
-        <form class="indexForm" id="signup_form">
-            <input type="email" placeholder="  School Email" class="indexInput" id="signup_email">
-            <br>
-            <input type="password" placeholder="  Password" class="indexInput" id="sighup_password">
-        </form>
-        <button type="submit" class="indexFormSubmitButton" form="signup_form">Login</button>
-    </div>
+        <div id="contentLogin">
+            <form class="indexForm" id="login_form">
+				<input type="text" name="user" placeholder="Username" class="indexInput"><br>
+				<input type="password" name="pass" placeholder="Password" class="indexInput"><br>
+				<input type="submit" name="login" value="Login" class="indexFormSubmitButton"><br><br>
+                <a class="reoveryLink" href="#">Recover password</a><br>
+            </form>
+        </div>
     <div class="switchLayer">
-        <div id="loginButton" class="titleUnderline" onclick="switchSignup()"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>   Sign-Up Now!</div>
+        <div id="loginButton" class="titleUnderline" onclick="switchSignup()"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>   Or Sign Up</div>
     </div>
 </div>
 <div class="outerLayer">
@@ -67,20 +79,21 @@
         <div class="topTitle">Project University</div>
     </div>
     <div class="signTitleBox">
-        <div class="signTitle">Login Into Account</div>
+        <div class="signTitle">Sign Up</div>
     </div>
-        <div id="contentLogin">
-            <form class="indexForm" id="login_form">
-                <input type="email" placeholder="School Email" class="indexInput" id="login_email">
-                <br>
-                <input type="password" placeholder="Password" class="indexInput" id="login_password">
-                <!--ADD LINK TO ACCOUNT RECOVERY-->
-                <a class="reoveryLink" href="#">Recover password</a>
-            </form>
-            <button type="submit" class="indexFormSubmitButton" form="login_form">Login</button>
-        </div>
+    <div id="contentSignup">
+        <form class="indexForm" id="signup_form">
+	<input type="name" name="name" placeholder="Name" class="indexInput"><br>
+	<input type="name" name="user" placeholder="Username" class="indexInput"><br>
+	<input type="email" name="email" placeholder="Email" class="indexInput"><br>
+	<input type="password" name="pass" placeholder="Password" class="indexInput" id="pass" onkeyup='check();'><br>
+	<input type="password" name="c_pass" placeholder="Confirm Password" class="indexInput" id="c_pass" onkeyup='check();'><span id='message' ></span><br>
+	<input type="submit" name="create" value="Sign-Up" class="indexFormSubmitButton">
+        </form>
+        <!--<button type="submit" name="create" class="indexFormSubmitButton" form="signup_form">Sign Up</button-->
+    </div>
         <div class="switchLayer">
-            <div id="signupButton" class="titleUnderline" onclick="switchLogin()">Sign-Up Now!   <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></div>
+            <div id="signupButton" class="titleUnderline" onclick="switchLogin()">Or Log In   <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></div>
         </div>
 </div>
 </div>
