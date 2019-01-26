@@ -35,7 +35,7 @@ function searchOverlayOff() {
 
 
 
-function openSearch() {
+/*function openSearch() {
     if (document.getElementById("searchBar").style.opacity == 1){
         document.getElementById("searchBar").style.opacity = 0;
         document.getElementById("searchBar").style.width = "50px";
@@ -48,8 +48,24 @@ function openSearch() {
             document.getElementById("searchBar").style.width = "450px";
         }
     }
-}
+}*/
 
+
+function openSearch() {
+    if (document.getElementById("searchBar").style.opacity == 1){
+        document.getElementById("searchBar").style.opacity = 0;
+        document.getElementById("searchBar").style.width = "50px";
+        setTimeout(function() {document.getElementById("searchButton").style.left = "45%";}, 500);
+
+    }
+    else{
+
+        setTimeout(function() {
+            document.getElementById("searchBar").style.opacity = 1;
+            document.getElementById("searchBar").style.width = "450px";}, 100);
+        document.getElementById("searchButton").style.left = "33%";
+    }
+}
 
 function switchLogin(){
     document.getElementById("layerLogin").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
