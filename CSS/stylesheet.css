@@ -1,0 +1,922 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background-color: #212529;
+    overflow-x: hidden;
+}
+#canvas {
+    z-index: -1;
+    position: absolute;
+	top: 0;
+	width: calc(100vw - 18px);
+	height: 100vh;
+	border: none;
+}
+.topnav {
+	width: 100%;
+	position: fixed;
+	top: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+	height: 10vh;
+	z-index: 30;
+}
+
+.topnav .option {
+	height: 100%;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    text-decoration: none;
+    font-size: 15px;
+	line-height: 10vh;
+	transition: 0.3s;
+}
+.topnav .active {
+    font-size: 25px;
+}
+
+.topnav .option:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #40e080;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        position: absolute;
+        right: 1%;
+        top: 1%;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        top: 5%;
+    }
+}
+.side{
+    position: absolute;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    /*border: 5px #148dff solid;*/
+    right: 0;
+    transition: 0.5s ease;
+}
+#searchOverlay{
+    position: fixed;
+    display: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+    transition: 0.5s ease;
+}
+.container{
+    width: 99%;
+    z-index: 1;
+}
+#createContainer{
+    width: 99%;
+	height: 89vh;
+	margin-top: 11vh;
+	text-align: center;
+}
+#create{
+    border-bottom: #ececec solid 2px;
+    height: 100%;
+    width: 95%;
+    display: inline-block;
+    vertical-align: top;
+	position: relative;
+}
+#createInfo{
+    text-align: center;
+    color: white;
+    left: 20%;
+    top: 10%;
+    font-size: 50px;
+}
+
+/*#createButton {
+    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+    background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+    background-color:#007dc1;
+    border-radius:3px;
+    border:1px solid #124d77;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #154682;
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    font-size: 25px;
+}
+#createButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+    background-color:#0061a7;
+}*/
+
+button {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+#createRow {
+	text-align: center;
+	margin-top: 10%;
+	position: static;
+	bottom: 30vh;
+	width: 100%;
+}
+#createButton {
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    color: #333333;
+    border: none;
+    font-size: 25px;
+    z-index: 1;
+    position: relative;
+	white-space: nowrap;
+}
+#createButton:after, #createButton:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(10deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+#createButton:before {
+    background-color: white;
+    top: -0.5rem;
+    left: 00px;
+}
+#createButton:after {
+    background-color: #40e080;
+    top: 0.5rem;
+    left: 50%;
+}
+#createButton:hover:before, #createButton:hover:after {
+    top: 0;
+    transform: skewx(0deg);
+}
+#createButton:hover:after {
+    left: 0;
+}
+#createButton:hover:before {
+    left: 50%;
+}
+
+#search{
+    height: 100%;
+    width: 95%;
+    display: inline-block;
+    vertical-align: top;
+	position: relative;
+}
+#searchInfo{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    top: 10%;
+}
+#overlayText{
+    position: absolute;
+    color: white;
+    left: 37%;
+    top: 20%;
+    text-align: center;
+}
+#searchBar{
+    position: absolute;
+    border-radius: 20px;
+    border: #A9A9A9 solid 1px;
+    background-color: rgba(192,192,192,0.3);
+    padding-left: 40px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    top: 35%;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+/*#searchButton {
+    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+    background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+    background-color:#007dc1;
+    border-radius:3px;
+    border:1px solid #124d77;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #154682;
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    font-size: 25px;
+}
+#searchButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+    background-color:#0061a7;
+}*/
+#searchRow {
+	text-align: center;
+	margin-top: 10%;
+	position: static;
+	bottom: 30vh;
+	width: 100%;
+}
+
+#searchOverlayButton {
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    color: #333333;
+    border: none;
+    position: relative;
+    font-size: 25px;
+    z-index: 1;
+	white-space: nowrap;
+}
+#searchOverlayButton:after, #searchOverlayButton:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(10deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+#searchOverlayButton:before {
+    background-color: #40e080;
+    top: 0;
+    left: 0px;
+}
+#searchOverlayButton:after {
+    background-color: white;
+    top: 0.5rem;
+    left: 50%;
+}
+#searchOverlayButton:hover:before, #searchOverlayButton:hover:after {
+    top: 0;
+    transform: skewx(0deg);
+}
+#searchOverlayButton:hover:after {
+    left: 0px;
+}
+#searchOverlayButton:hover:before {
+    left: 50%;
+}
+
+
+#searchButton {
+    box-shadow:inset 0px 1px 0px 0px #40E080;
+    background:linear-gradient(to bottom, #40E080 5%, #2be09a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#40E080', endColorstr='#40E080',GradientType=0);
+    background-color:#40E080;
+    border-radius:50px;
+    border:1px solid #40E080;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:15px 20px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #40E080;
+    position: absolute;
+    left: 45%;
+    top: 34.5%;
+    font-size: 25px;
+    transition: 0.5s ease;
+}
+#searchButton:hover {
+    background:linear-gradient(to bottom, #40E080 5%, #2be09a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+    background-color:#40E080;
+}
+/*#searchButton {
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    color: #333333;
+    border: none;
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    font-size: 25px;
+}
+#searchButton:after, #searchButton:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+#searchButton:before {
+    background-color: #ffff00;
+    top: -1rem;
+    left: 0rem;
+}
+#searchButton:after {
+    background-color: #8a19ff;
+    top: 1rem;
+    left: 8rem;
+}
+#searchButton:hover:before, #searchButton:hover:after {
+    top: 0;
+    transform: skewx(0deg);
+}
+#searchButton:hover:after {
+    left: 0rem;
+}
+#searchButton:hover:before {
+    left: 8.75rem;
+}*/
+
+
+#searchClose {
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    color: #333333;
+    border: none;
+    position: absolute;
+    left: 40%;
+    top: 80%;
+    font-size: 25px;
+}
+#searchClose:after, #searchClose:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 65%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+#searchClose:before {
+    background-color: #40e080;
+    top: 0;
+    left: 0;
+}
+#searchClose:after {
+    background-color: #fdfbff;
+    top: 0.5rem;
+    left: 7rem;
+}
+#searchClose:hover:before, #searchClose:hover:after {
+    top: 0;
+    transform: skewx(0deg);
+}
+#searchClose:hover:after {
+    left: 0;
+}
+#searchClose:hover:before {
+    left: 8.75rem;
+}
+@media (min-width: 768px){
+    #create{
+        max-width: 45%;
+		border-right: #ececec solid 2px;
+		border-bottom: none;
+    }
+    #search{
+        max-width: 47%;
+    }
+}
+@media (max-width: 768px){
+    #aboutContainer{
+		margin-top: 90vh;
+    }
+    #teamContainer{
+        position: relative;
+        margin-top: 5%;
+    }
+}
+@media (min-width: 530px){
+	#createRow {
+		position: absolute;
+	}
+	#searchRow {
+		position: absolute;
+	}
+	#createButton:after, #createButton:before {
+		transform: skewX(30deg);
+	}
+	#searchOverlayButton:after, #searchOverlayButton:before {
+		transform: skewX(30deg);
+	}
+}
+
+#aboutContainer{
+    text-align: center;
+}
+#about{
+}
+#aboutInfo{
+    color: white;
+}
+#aboutText{
+    color: white;
+}
+#teamContainer{
+    text-align: center;
+    top: 132%;
+    height: 85%;
+}
+#team{
+}
+#teamInfo{
+    color: white;
+}
+.member{
+    display: inline-block;
+    margin-right: 65px;
+    margin-left: 65px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: relative;
+    margin-top: 5%;
+    color: black;
+}
+.member:after, .member:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    transform: skewX(20deg);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -1;
+}
+.member:after{
+    transform: skewX(0deg);
+}
+.member:before {
+    background-color: #40e080;
+    left: -2rem;
+}
+.member:after {
+    background-color: white;
+    top: 0;
+    left: 3.1rem;
+    width: 80%;
+}
+.member:hover:before {
+    background-image: linear-gradient(90deg, #40e080 80%, #007dc1 80%, #40e080 80%, #007dc1 50%);
+    animation:slidebg 2s linear infinite;
+    top: -1rem;
+}
+@keyframes slidebg {
+    to {
+        background-position:20vw;
+    }
+}
+.memberImage{
+    border-radius: 10px;
+    margin-left: 60px;
+	margin-top: 5px;
+    width: 150px;
+    height: 150px;
+}
+.name{
+    margin-left: 20%;
+}
+.memberInfo{
+    margin-left: 20%;
+}
+
+
+
+/* LOGIN */
+.outerLayer{
+    overflow: hidden;
+}
+#layerOne{
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background-color: #2f3337;
+    z-index: 1;
+    box-shadow: -1px 0 10px black;
+}
+#layerSignup{
+     position: absolute;
+     right: 0;
+     width: 75vw;
+     height: 100vh;
+     background-color: #4d5155;
+     z-index: 2;
+     box-shadow: -1px 0 10px black;
+	 overflow-y: auto;
+ }
+#layerProfile{
+     position: absolute;
+     right: 0;
+     width: 80vw;
+     height: 100vh;
+     background-color: #4d5155;
+     z-index: 2;
+     box-shadow: -1px 0 10px black;
+ }
+#topPref{
+    position: absolute;
+    right: -20vw;
+    width: 20vw;
+    height: 93vh;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+ }
+#bottomPref{
+    position: absolute;
+    right: 0;
+    top: 93vh;
+    width: 20vw;
+    height: 7vh;
+    border-radius: 10px;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+}
+
+#layerLogin{
+    position: absolute;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+}
+.signTitleBox {
+    width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+}
+#titleBoxProfile{
+    width: 100%;
+    text-align: center;
+    top: 16vh;
+    left: -11vw;
+    position: absolute;
+}
+#titleBoxSide{
+    width: 100%;
+    text-align: center;
+    top: 16vh;
+    position: absolute;
+}
+.profileImageUpload{
+    border-radius: 500px;
+    width: 15vw;
+    height: 30vh;
+    position: absolute;
+    right: 6vh;
+    top: 11vh;
+}
+#submitProfile{
+    height: 7vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+#nickname{
+    position: absolute;
+    top: 62%;
+    left: 10%;
+    width: 80%;
+    height: 5.5%;
+    background-color: #a3dea5;
+    border-color: #a3dea5;
+    border-radius: 5px;
+}
+#nickname:hover{
+    width: 81%;
+}
+#nickname:focus{
+    width: 83%;
+}
+#profileEmail{
+    position: absolute;
+    top: 71%;
+    left: 10%;
+    width: 80%;
+    height: 5.5%;
+    background-color: #a3dea5;
+    border-color: #a3dea5;
+    border-radius: 5px;
+}
+#profileEmail:hover{
+    width: 81%;
+}
+#profileEmail:focus{
+    width: 83%;
+}
+#gitHubLink{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    width: 80%;
+    height: 5.5%;
+    background-color: #a3dea5;
+    border-color: #a3dea5;
+    border-radius: 5px;
+}
+#gitHubLink:hover{
+    width: 81%;
+}
+#gitHubLink:focus{
+    width: 83%;
+}
+#profileName{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    color: white;
+}
+
+#openPref {
+    display: inline-block;
+    font-size: 4vh;
+    border-radius: 10%;
+    color: #40e080;
+    padding: 1vh;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 42vh;
+    right: 2.5vw;
+}
+#openPref:hover{
+    color: white;
+    transition: 0.25s ease;
+}
+
+
+.imageChooser{
+    top: 41vh;
+    left: 6vw;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    width: 7.8vw;
+    height: 4vh;
+    border-color: #fbfbfb;
+    background-color: #fbfbfb;
+    transition: all 0.2s;
+    cursor: pointer;
+    color: #40E080;
+}
+.imageChooser:hover, .imageChooser:focus{
+    border-color: rgb(64, 224, 128);
+    background-color: rgb(64, 224, 128);
+    color: white;
+}
+.signTitle {
+    display: inline-block;
+    font-size: 4vh;
+    border-radius: 10%;
+    color: #40e080;
+}
+.switchLayer {
+    text-align: center;
+    top: 85vh;
+	left: 5vw;
+	position: absolute;
+}
+#signupButton {
+    display: inline-block;
+    font-size: 4vh;
+    border-radius: 10%;
+    color: #40e080;
+    padding: 1vh;
+    transition: 0.5s ease;
+}
+#signupButton:hover{
+    color: white;
+    transition: 0.25s ease;
+}
+#loginButton {
+    display: inline-block;
+    font-size: 4vh;
+    border-radius: 10%;
+    color: #40e080;
+    padding: 1vh;
+    transition: 0.5s ease;
+}
+#loginButton:hover{
+    color: white;
+    transition: 0.25s ease;
+}
+#loginButtonContainer{
+    position: absolute;
+    left: 10%;
+    top: 16%;
+}
+#contentLogin{
+    height: 20vh;
+    margin-top: 15vh;
+}
+#contentSignup{
+    height: 20vh;
+    margin-top: 5vh;
+}
+@media (max-width: 600px){
+    #layerLogin{
+		width: 95vw;
+	}
+    #layerSignup{
+		width: 99vw;
+	}
+}
+
+.topTitleContainer{
+	width: 100%;
+	z-index: 5;
+    color: #40e080;
+	text-align: center;
+	margin-top: 15vh;
+}
+.topTitle{
+	font-size: calc(10px + 3vw);
+}
+.titleUnderline{
+    display: inline-block;
+    cursor: pointer;
+}
+.titleUnderline:after {
+    display:block;
+    content: '';
+    padding-bottom: 3px;
+    border-bottom: solid 3px white;
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(1, -0.33, 0, 1.38);
+}
+.titleUnderline:hover:after {
+    transform: scaleX(1);
+}
+.indexForm{
+	text-align: center;
+}
+.indexInput{
+    height: 5vh;
+    width: 33%;
+	border-radius: 5px;
+	padding-left: 5px;
+    transition: 0.2s ease;
+}
+.indexInput:focus{
+    transition: all 0.5s;
+    width: 35%;
+}
+.indexFormSubmitButton {
+    width: 33%;
+    height: 6vh;
+    border-color: #fbfbfb;
+    border-radius: 10px;
+    background-color: #fbfbfb;
+    z-index:0;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size:150%;
+	margin-top: 10px;
+}
+.indexFormSubmitButton:hover, .indexFormSubmitButton:focus{
+    border-color: rgb(64, 224, 128);
+    background-color: rgb(64, 224, 128);
+    color: white;
+}
+#message{
+	position: absolute;
+	top: calc(49vh + 33px + 3vw);
+	left: 70%;}
+#editor{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    background-color: white;
+}
+#bio{
+    width: 50%;
+    height: 50%;
+    background-color: red;
+    color: white;
+}
+/*
+#layer2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    visibility: hidden;
+}
+#layer2 * {
+    visibility: visible;
+}
+#contentLogin{
+    position: absolute;
+    width: 33%;
+    height: 20%;
+    top: 67%;
+    left: 33%;
+}
+.indexForm{
+    height:100%;
+}
+.indexInput{
+    height: 30%;
+    width: 100%;
+    transition: 0.2s ease;
+    padding-left: 3%;
+}
+.indexInput:focus{
+    transition: all 0.5s;
+    width: 105%;
+}
+.indexFormSubmitButton {
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    border-color: #fbfbfb;
+    border-radius: 10px;
+    background-color: #fbfbfb;
+    z-index:0;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size:150%;
+}
+.indexFormSubmitButton:hover, .indexFormSubmitButton:focus{
+    border-color: rgb(84, 180, 93);
+    background-color: rgb(84, 180, 93);
+    color: white;
+}*/
+/*#anthony{
+
+}
+#aryan{
+
+}
+#mahbod{
+
+}
+#azfar{
+
+}*/
