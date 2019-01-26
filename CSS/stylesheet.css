@@ -844,18 +844,19 @@ button {
 #message{
 	position: absolute;
 	top: calc(49vh + 33px + 3vw);
-	left: 70%;}
-#editor{
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    background-color: white;
+	left: 70%;
 }
-#bio{
-    width: 50%;
-    height: 50%;
-    background-color: red;
-    color: white;
+#editorBox{
+    width: 60%;
+    min-height: 20vh;
+    background-color: white;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: ridge;
+    text-align: justify;
+    height: 45vh;
+    position: absolute;
+    top: 10vh;
 }
 /*
 #layer2 {

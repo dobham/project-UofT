@@ -24,7 +24,8 @@ function init_quill(editor_div, announcement_id){
     ];
 
     let quill = new Quill("#" + editor_div.attr('id'), {
-        theme: 'core',
+        theme: 'snow',
+        placeholder: 'Tell a bit about yourself',
         modules: {
             toolbar: toolbarOptions
         }
@@ -33,5 +34,5 @@ function init_quill(editor_div, announcement_id){
     return quill;
 
 }
-var container = document.getElementById('bio');
-var editor = new Quill(container);
+let editor_div = $("#editorBox");
+init_quill(editor_div, 0).enable();
