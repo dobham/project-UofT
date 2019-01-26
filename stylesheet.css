@@ -105,7 +105,7 @@ body {
 }
 #create{
     border-bottom: #ececec solid 2px;
-    height: 98%;
+    height: 100%;
     width: 95%;
     display: inline-block;
     vertical-align: top;
@@ -155,14 +155,15 @@ button {
 }
 #createRow {
 	text-align: center;
-	position: absolute;
-	bottom: 0;
+	margin-top: 10%;
+	position: static;
+	bottom: 30vh;
 	width: 100%;
 }
 #createButton {
     letter-spacing: 0.25em;
     margin: 0 auto;
-    padding: 1rem 2.5rem;
+    padding: 10px;
     background: transparent;
     outline: none;
     color: #333333;
@@ -170,26 +171,26 @@ button {
     font-size: 25px;
     z-index: 1;
     position: relative;
-
+	white-space: nowrap;
 }
 #createButton:after, #createButton:before {
     content: "";
     position: absolute;
     height: 100%;
-    width: 60%;
-    transform: skewX(30deg);
+    width: 50%;
+    transform: skewX(10deg);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: -2;
 }
 #createButton:before {
     background-color: white;
     top: -0.5rem;
-    left: 0;
+    left: 00px;
 }
 #createButton:after {
     background-color: #40e080;
     top: 0.5rem;
-    left: 10rem;
+    left: 50%;
 }
 #createButton:hover:before, #createButton:hover:after {
     top: 0;
@@ -199,11 +200,11 @@ button {
     left: 0;
 }
 #createButton:hover:before {
-    left: 8.75rem;
+    left: 50%;
 }
 
 #search{
-    height: 98%;
+    height: 100%;
     width: 95%;
     display: inline-block;
     vertical-align: top;
@@ -266,15 +267,16 @@ button {
 }*/
 #searchRow {
 	text-align: center;
-	position: absolute;
-	bottom: 0;
+	margin-top: 10%;
+	position: static;
+	bottom: 30vh;
 	width: 100%;
 }
 
 #searchOverlayButton {
     letter-spacing: 0.25em;
     margin: 0 auto;
-    padding: 1rem 2.5rem;
+    padding: 10px;
     background: transparent;
     outline: none;
     color: #333333;
@@ -282,35 +284,36 @@ button {
     position: relative;
     font-size: 25px;
     z-index: 1;
+	white-space: nowrap;
 }
 #searchOverlayButton:after, #searchOverlayButton:before {
     content: "";
     position: absolute;
     height: 100%;
     width: 50%;
-    transform: skewX(30deg);
+    transform: skewX(10deg);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: -2;
 }
 #searchOverlayButton:before {
     background-color: #40e080;
     top: 0;
-    left: 0;
+    left: 0px;
 }
 #searchOverlayButton:after {
     background-color: white;
     top: 0.5rem;
-    left: 9rem;
+    left: 50%;
 }
 #searchOverlayButton:hover:before, #searchOverlayButton:hover:after {
     top: 0;
     transform: skewx(0deg);
 }
 #searchOverlayButton:hover:after {
-    left: 0;
+    left: 0px;
 }
 #searchOverlayButton:hover:before {
-    left: 8.75rem;
+    left: 50%;
 }
 
 
@@ -443,6 +446,21 @@ button {
         margin-top: 5%;
     }
 }
+@media (min-width: 530px){
+	#createRow {
+		position: absolute;
+	}
+	#searchRow {
+		position: absolute;
+	}
+	#createButton:after, #createButton:before {
+		transform: skewX(30deg);
+	}
+	#searchOverlayButton:after, #searchOverlayButton:before {
+		transform: skewX(30deg);
+	}
+}
+
 #aboutContainer{
     text-align: center;
 }
@@ -544,6 +562,7 @@ button {
      background-color: #4d5155;
      z-index: 2;
      box-shadow: -1px 0 10px black;
+	 overflow-y: auto;
  }
 #layerProfile{
      position: absolute;
@@ -587,8 +606,7 @@ button {
 .signTitleBox {
     width: 100%;
     text-align: center;
-    top: 35vh;
-    position: absolute;
+    margin-top: 5vh;
 }
 #titleBoxProfile{
     width: 100%;
@@ -711,7 +729,6 @@ button {
     font-size: 4vh;
     border-radius: 10%;
     color: #40e080;
-    padding: 1vh;
 }
 .switchLayer {
     text-align: center;
@@ -749,18 +766,12 @@ button {
     top: 16%;
 }
 #contentLogin{
-    position: absolute;
-    width: 33%;
-    height: 20%;
-    top: 50%;
-    left: 33%;
+    height: 20vh;
+    margin-top: 15vh;
 }
 #contentSignup{
-    position: absolute;
-    width: 33%;
-    height: 20%;
-    top: 50%;
-    left: 33%;
+    height: 20vh;
+    margin-top: 5vh;
 }
 @media (max-width: 600px){
     #layerLogin{
@@ -797,22 +808,22 @@ button {
     transform: scaleX(1);
 }
 .indexForm{
-    height:100%;
+	text-align: center;
 }
 .indexInput{
-    height: 30%;
-    width: 100%;
+    height: 5vh;
+    width: 33%;
+	border-radius: 5px;
+	padding-left: 5px;
     transition: 0.2s ease;
-    padding-left: 3%;
 }
 .indexInput:focus{
     transition: all 0.5s;
-    width: 105%;
+    width: 35%;
 }
 .indexFormSubmitButton {
-    position: absolute;
-    width: 100%;
-    height: 35%;
+    width: 33%;
+    height: 6vh;
     border-color: #fbfbfb;
     border-radius: 10px;
     background-color: #fbfbfb;
@@ -821,12 +832,17 @@ button {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     font-size:150%;
+	margin-top: 10px;
 }
 .indexFormSubmitButton:hover, .indexFormSubmitButton:focus{
     border-color: rgb(64, 224, 128);
     background-color: rgb(64, 224, 128);
     color: white;
 }
+#message{
+	position: absolute;
+	top: calc(49vh + 33px + 3vw);
+	left: 70%;
 /*
 #layer2 {
     height: 100%;
