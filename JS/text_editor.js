@@ -33,5 +33,5 @@ function init_quill(editor_div, announcement_id){
     return quill;
 
 }
-let editor_div = $("#editor");
-init_quill(editor_div, 0).enable();
+var container = document.getElementById('bio');
+var editor = new Quill(container);
