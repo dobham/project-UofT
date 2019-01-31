@@ -44,19 +44,27 @@ let toolbarOptionsLimited = [
 
 ];
 var quillEditor = new Quill("#editorBox", {
-    theme: 'snow',
-    placeholder: 'Enter Information Here',
-    modules: {
-        toolbar: toolbarOptions
-    }
+  modules: {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ['bold', 'italic', 'underline'],
+      ['image', 'code-block']
+    ]
+  },
+  placeholder: 'Description',
+  theme: 'snow'  // or 'bubble'
 });
 
 var quillContact = new Quill("#editorContact", {
-    theme: 'snow',
-    placeholder: 'Enter Information Here',
-    modules: {
-        toolbar: '#toolbar'
-    }
+  modules: {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ['bold', 'italic', 'underline'],
+      ['image', 'code-block']
+    ]
+  },
+  placeholder: 'Contact and other Info',
+  theme: 'snow'  // or 'bubble'
 });
 
 
