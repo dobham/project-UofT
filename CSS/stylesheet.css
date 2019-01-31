@@ -13,6 +13,10 @@ body {
 	height: 100vh;
 	border: none;
 }
+canvas{
+	position: absolute;
+	left: 0;
+}
 .topnav {
 	width: 100%;
 	position: fixed;

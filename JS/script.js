@@ -59,11 +59,12 @@ function openSearch() {
 
     }
     else{
+        setTimeout(function() {
+			document.getElementById("searchButton").style.left = "33%";}, 200);
 
         setTimeout(function() {
             document.getElementById("searchBar").style.opacity = 1;
-            document.getElementById("searchBar").style.width = "450px";}, 100);
-        document.getElementById("searchButton").style.left = "33%";
+            document.getElementById("searchBar").style.width = "450px";}, 300);
     }
 }
 
