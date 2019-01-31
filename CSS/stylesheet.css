@@ -863,12 +863,13 @@ button {
     color: white;
     border-radius: 5px;
     background-color: #40e080;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-decoration: none;
     transition: 0.5s ease;
+    position: relative;
 }
 .tag:hover {
     background-color: #007DC1;
@@ -877,17 +878,37 @@ button {
     text-decoration: none;
     transition: 0.5s ease;
 }
-
 .cross{
     background-color:#cd5c5c;
     border-radius: 30px;
     padding: 5px;
     position: relative;
-    margin-left: 8x;
+    margin-left: 8px;
 }
 
 .cross:hover{
     background-color:red;
+}
+.target{
+    background-color: white;
+    position: absolute;
+    top: 88vh;
+    left: 5vw;
+    border: solid 2px white;
+    width: 26.5vw;
+    height: 4vh;
+    border-radius: 5px;
+    padding-top: 15px;
+}
+#postTitle{
+    position: absolute;
+    top: 22vh;
+    left: 5vw;
+}
+#textBox{
+    position: absolute;
+    top: 82vh;
+    left: 5vw;
 }
 /*
 #layer2 {

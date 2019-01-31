@@ -1,6 +1,6 @@
 tags = [];
 $("#textBox").keypress(function (e) {
-    if (tags.length <= 5 && e.which === 32) {
+    if (tags.length <= 4 && e.which === 32) {
         $(".target").append("<a href='#' class='tag' >"  + this.value.split(" ").pop() +'<span class="cross">X</span>'+ "</a>");
         tags.push(this.value);
     }
