@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
 	<input type="name" name="projectName" value="" placeholder="Your project name"><br>
 	<input type="name" name="client" value="" placeholder="client name"><br>
@@ -15,7 +19,6 @@
 		$comment = $_POST['comment'];
 		$client = $_POST['client'];
 		$user = $_SESSION['user'];
-
 		$sql = "INSERT INTO user_project_info(host, client, project_name, comments) VALUES('$user', '$client', '$projectName', '$comment')";
 		if ($conn->multi_query($sql) === TRUE) {
 	    	echo "New records created successfully";
@@ -24,10 +27,10 @@
 		}
 		$conn->close();
 		//header('location: upload.php');
-	}
+
 
 	$currentDir = getcwd();
-    $uploadDirectory = "/uploads/".$_SESSION['user']."/";
+    $uploadDirectory = "/uploads/".$user."/";
 
     $errors = []; // Store all foreseen and unforseen errors here
 
@@ -39,7 +42,7 @@
     $fileType = $_FILES['uploaded_file']['type'];
     //$fileExtension = strtolower(end(explode('.',$fileName)));
 
-    $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
+    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
 
     if (isset($_FILES['uploaded_file'])) {
 
@@ -65,7 +68,10 @@
             }
         }
     }
+	}
 ?>
 <form action="homepage.php">
 	<input type='submit' name='Homepage' value='Homepage'>
 </form>
+</body>
+</html>

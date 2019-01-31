@@ -3,7 +3,8 @@
     <link rel="stylesheet" href="includes/tableStyle.css" />
 </head>
 <body>
-<table id="work">
+<center>
+<table id="work" width="75%">
   <tr>
     <th width="15%">User</th>
     <th width="20%">Project Name</th>
@@ -12,6 +13,7 @@
 
   </tr>
 <?php
+
 include 'includes/connect.php';
 $sql = "SELECT * FROM user_project_info";
 $result = $conn->query($sql);
@@ -24,16 +26,17 @@ if ($result->num_rows > 0) {
         echo "<td>".$row['comments']."</td>";
 ?>
 <td>
-<form action="project.php" method="GET" style="display: inline;">
-            <input type="hidden" name="id" value="<?php echo $row['id'] ?>"/>
-            <input type="submit" name="enterProj" value="go to page"/>
-            </form>
-          </td>
+  <form action="project.php" method="GET" style="display: inline;">
+    <input type="hidden" name="id" value="<?php echo $row['id'] ?>"/>
+    <input type="submit" name="enterProj" value="Go to page"/>
+  </form>
+</td>
 <?php
 echo "</tr>";
           }
         }
         ?>
       </table>
+    </center>
     </body>
     </html>

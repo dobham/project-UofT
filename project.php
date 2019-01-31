@@ -2,6 +2,8 @@
 <head>
   <?php
   include 'includes/connect.php';
+  session_start();
+  echo $_SESSION['user'];
   $id = $_GET['id'];
   $query = "SELECT * FROM user_project_info WHERE id='$id'";
   $result = mysqli_query($conn, $query);
@@ -18,5 +20,8 @@
 <br><br>
 <p1><?php echo "<b>Description </b><br><br>".$description; ?></p1>
 
+<form>
+  
+<form>
 </body>
 </html>

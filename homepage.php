@@ -18,9 +18,10 @@
 	<form method="post" action="logout.php">
 		<input type="submit" name="logout" value="logout">
 		<input type="submit" name="createProject" value="Create A Project" formaction="createProject.php">
+		<input type="submit" name="claimProject" value="Claim a Project" formaction="workPage.php">
 	</form>
 
-	
+
 
 </body>
 </html>

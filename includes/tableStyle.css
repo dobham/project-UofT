@@ -14,7 +14,7 @@ body {
 }
 tr{
   background-color:#cccccc;
-  color: white;
+  color: #61666b;
 }
  tr:hover{
     background-color:#40e080;
@@ -23,6 +23,7 @@ tr{
 
  tr:nth-child(odd) {
     background-color: #61666b;
+    color: #cccccc;
 }
 tr:nth-child(odd):hover {
    background-color: #40e080;
