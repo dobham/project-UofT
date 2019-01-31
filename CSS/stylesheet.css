@@ -859,6 +859,24 @@ button {
     top: 35vh;
     left: 5vw;
 }
+#editorContact{
+    width: 60%;
+    min-height: 20vh;
+    background-color: white;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: ridge;
+    text-align: justify;
+    height: 45vh;
+    position: absolute;
+    top: 45vh;
+    left: 20vw;
+}
+#toolbar{
+    position: absolute;
+    left: 60%;
+    top: 0;
+}
 .tag {
     color: white;
     border-radius: 5px;
@@ -910,6 +928,19 @@ button {
     top: 82vh;
     left: 5vw;
 }
+/*#contactBox{
+    width: 60%;
+    min-height: 20vh;
+    background-color: white;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: ridge;
+    text-align: justify;
+    height: 45vh;
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+}*/
 /*
 #layer2 {
     height: 100%;
