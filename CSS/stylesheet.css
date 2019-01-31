@@ -856,7 +856,38 @@ button {
     text-align: justify;
     height: 45vh;
     position: absolute;
-    top: 10vh;
+    top: 35vh;
+    left: 5vw;
+}
+.tag {
+    color: white;
+    border-radius: 5px;
+    background-color: #40e080;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+.tag:hover {
+    background-color: #007DC1;
+    border-bottom: 1px solid #c4dae9;
+    border-right: 1px solid #c4dae9;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.cross{
+    background-color:#cd5c5c;
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    margin-left: 8x;
+}
+
+.cross:hover{
+    background-color:red;
 }
 /*
 #layer2 {

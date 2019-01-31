@@ -3,7 +3,7 @@ function init_quill(editor_div, announcement_id){
     let toolbarOptions = [
 
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-        //['blockquote', 'code-block'],
+        ['blockquote', 'code-block'],
 
         [{ 'header': 1 }, { 'header': 2 }],               // custom button values
         [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -25,7 +25,7 @@ function init_quill(editor_div, announcement_id){
 
     let quill = new Quill("#" + editor_div.attr('id'), {
         theme: 'snow',
-        placeholder: 'Tell a bit about yourself',
+        placeholder: 'Enter Information Here',
         modules: {
             toolbar: toolbarOptions
         }
