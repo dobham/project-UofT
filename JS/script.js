@@ -95,8 +95,6 @@ function prefOpen(){
         close = true;
     }
 }
-<<<<<<< HEAD
-=======
 
 var close = true;
 function prefOpenView(){
@@ -112,4 +110,3 @@ function prefOpenView(){
         close = true;
     }
 }
->>>>>>> 87e90c67e0fff5843bd157251fdc5ea40c3188a0
