@@ -95,3 +95,21 @@ function prefOpen(){
         close = true;
     }
 }
+<<<<<<< HEAD
+=======
+
+var close = true;
+function prefOpenView(){
+    document.getElementById("topPrefView").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    console.log(close);
+    if(close){
+        document.getElementById("topPrefView").style.right = "0";
+        close = false;
+        console.log(close);
+    }
+    else if (!close){
+        document.getElementById("topPrefView").style.right = "-20vw";
+        close = true;
+    }
+}
+>>>>>>> 87e90c67e0fff5843bd157251fdc5ea40c3188a0
