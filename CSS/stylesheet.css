@@ -13,6 +13,9 @@ body {
 	height: 100vh;
 	border: none;
 }
+canvas {
+    position: absolute;
+}
 .topnav {
 	width: 100%;
 	position: fixed;
@@ -586,9 +589,10 @@ button {
 
 #topPref{
     position: absolute;
+	top: 10vh;
     right: -20vw;
     width: 20vw;
-    height: 93vh;
+    height: 90vh;
     background-color: #616569;
     z-index: 3;
     box-shadow: -1px 0 10px black;
@@ -596,7 +600,7 @@ button {
 #bottomPref{
     position: absolute;
     right: 0;
-    top: 93vh;
+    bottom: 1vh;
     width: 20vw;
     height: 7vh;
     border-radius: 10px;
@@ -628,7 +632,7 @@ button {
 #titleBoxSide{
     width: 100%;
     text-align: center;
-    top: 16vh;
+    top: 11vh;
     position: absolute;
 }
 .profileImageUpload{
@@ -693,22 +697,25 @@ button {
 #gitHubLink:focus{
     width: 83%;
 }
-#profileName{
+.profileNameBox{
+	width: 100%;
     position: absolute;
-    top: 50%;
+    top: 20%;
     text-align: center;
+}
+#profileName{
+	display: inline-block;
     color: white;
 }
 
 #openPref {
-    display: inline-block;
+    position: absolute;
     font-size: 4vh;
     border-radius: 10%;
     color: #40e080;
     padding: 1vh;
     transition: 0.5s ease;
-    position: absolute;
-    top: 42vh;
+    top: 20vh;
     right: 2.5vw;
 }
 #openPref:hover{
@@ -792,6 +799,10 @@ button {
     #layerSignup{
 		width: 99vw;
 	}
+    #layerProfile{
+		width: 100%;
+		left: 0;
+	}
 }
 
 .topTitleContainer{
@@ -807,6 +818,7 @@ button {
 .titleUnderline{
     display: inline-block;
     cursor: pointer;
+	
 }
 .titleUnderline:after {
     display:block;
@@ -871,6 +883,11 @@ button {
     position: absolute;
     top: 35vh;
     left: 5vw;*/
+}
+.editContainor {
+    width: 70%;
+	padding-left: 2.5%;
+	text-align: center;
 }
 #editorContact{
 	background-color: white;
@@ -960,7 +977,7 @@ button {
   outline: 0;
 }
 .custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
 #postTitle{
