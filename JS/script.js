@@ -97,7 +97,7 @@ function prefOpen(){
 }
 
 var close = true;
-function prefOpen(){
+function prefOpenView(){
     document.getElementById("topPrefView").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
     console.log(close);
     if(close){
