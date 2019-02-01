@@ -39,34 +39,19 @@
         Signup
     </a>
 </div>
-<div id="layerProfile">
+<div id="layerCreate">
     <div id="titleBoxProfile">
-        <div class="signTitle">Create a Post</div>
+        <div class="signTitle">Request A Project</div>
     </div>
-    <form method="get">
-        <input type="text" name="title" id="postTitle" class="indexInput" placeholder="Enter a Title">
-        <input type="text" name="title" id="gitLink" class="indexInput" placeholder="Enter GitHub Link">
-        <div id="toolbar">
-            <div class="ql-toolbar ql-snow">
-                <span class="ql-formats"></span>
-         <button type="button" class="ql-italic"></button>
-         <button type="button" class="ql-underline"></button>
-      <span class="ql-formats">
-         <button type="button" class="ql-indent" value="-1"></button>
-         <button type="button" class="ql-indent" value="+1"></button>
-         <button type="button" class="ql-list" value="ordered"></button>
-         <button type="button" class="ql-list" value="bullet"></button>
-      </span>
-      <span class="ql-formats">
-         <button type="button" class="ql-clean"></button>
-      </span>
-            </div>
-        </div>
-        <div id="editorBox"><p> <!-- USERS TYPE INTO THIS --> </p></div>
-        <div id="editorContact"><p> <!-- USERS TYPE INTO THIS --> </p></div>
-            <input type="text" id="textBox" class="indexInput" name="tagger" placeholder="Input Tags">
-            <div class="target" contenteditable="false">Project Tags: </div>
-            <input type="submit" name="submit" id="submitPost">
+    <form id="postCreateForm" method="get">
+        <input type="text" name="title" id="postTitle" class="indexInput" placeholder="Title">
+	<div id="editorBox"><p> <!-- USERS TYPE INTO THIS --> </p></div>
+	<div id="editorContact"><p> <!-- USERS TYPE INTO THIS --> </p></div>
+		<input id="descInput" type="hidden" name="descript" value="">
+		<input type="text" id="textBox" class="indexInput" name="tagger" placeholder="Tags"><br><br>
+		<input type="file" name="uploaded_file" id="fileToUpload" class="custom-file-input" multiple>
+		<div class="target" contenteditable="false"></div><br>
+		<input type="submit" name="submit" id="submitPost" class="indexFormSubmitButton" value="Go" action="" onclick="document.getElementById('descInput').value = document.getElementById('editorBox').children[0].innerHTML;">
     </form>
 </div>
 <canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>

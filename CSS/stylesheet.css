@@ -573,6 +573,17 @@ button {
      z-index: 2;
      box-shadow: -1px 0 10px black;
  }
+ #layerCreate{
+     position: absolute;
+	 overflow-y: auto;
+     right: 0;
+     width: 80vw;
+     height: 100vh;
+     background-color: #4d5155;
+     z-index: 2;
+     box-shadow: -1px 0 10px black;
+ }
+
 #topPref{
     position: absolute;
     right: -20vw;
@@ -620,9 +631,8 @@ button {
 #titleBoxProfile{
     width: 100%;
     text-align: center;
-    top: 16vh;
-    left: -11vw;
-    position: absolute;
+    margin-top: 16vh;
+	margin-bottom: 5vh;
 }
 #titleBoxSide{
     width: 100%;
@@ -856,7 +866,10 @@ button {
 	left: 70%;
 }
 #editorBox{
-    width: 60%;
+	background-color: white;
+	margin-bottom: 2vh;
+    border-radius: 0 0 5px 5px;
+    /*width: 60%;
     min-height: 20vh;
     background-color: white;
     padding: 1vh;
@@ -866,10 +879,13 @@ button {
     height: 45vh;
     position: absolute;
     top: 35vh;
-    left: 5vw;
+    left: 5vw;*/
 }
 #editorContact{
-    width: 60%;
+	background-color: white;
+	margin-bottom: 2vh;
+    border-radius: 0 0 5px 5px;
+    /*width: 60%;
     min-height: 20vh;
     background-color: white;
     padding: 1vh;
@@ -879,7 +895,7 @@ button {
     height: 45vh;
     position: absolute;
     top: 45vh;
-    left: 20vw;
+    left: 20vw;*/
 }
 #toolbar{
     position: absolute;
@@ -917,25 +933,51 @@ button {
     background-color:red;
 }
 .target{
-    background-color: white;
     position: absolute;
     top: 88vh;
     left: 5vw;
-    border: solid 2px white;
-    width: 26.5vw;
-    height: 4vh;
+    border: none;
     border-radius: 5px;
-    padding-top: 15px;
+
 }
+.custom-file-input {
+	width: 200px
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Files';
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+
 #postTitle{
-    position: absolute;
-    top: 22vh;
-    left: 5vw;
+	margin-bottom: 2vh;
 }
-#textBox{
-    position: absolute;
-    top: 82vh;
-    left: 5vw;
+#postCreateForm{
+	text-align: center;
+	padding: 2vh;
 }
 /*#contactBox{
     width: 60%;
