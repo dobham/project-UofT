@@ -572,6 +572,7 @@ button {
      right: 0;
      width: 80vw;
      height: 100vh;
+	 overflow-x: auto;
      background-color: #4d5155;
      z-index: 2;
      box-shadow: -1px 0 10px black;
@@ -1025,44 +1026,45 @@ button {
     top: 60vh;
     left: 8.5vw;
 }
+.bioBox{
+    width: 75%;
+	text-align: center;
+}
+
 #bioInfo{
+	display: inline-block;
     background-color: white;
-    margin-bottom: 2vh;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     border: ridge 2.5px #4d5155;
-    height: 40vh;
-    width: 45vw ;
-    position: absolute;
-    top: 30vh;
-    left: 6vw;
+    min-height: 3em;
+    width: 80% ;
+	padding: 1vh;
 }
+.tableBox{
+    width: 75%;
+	text-align: center;
+}
+
 #tablesProfile{
+	display: inline-block;
     background-color: white;
-    margin-bottom: 2vh;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     border: ridge 2.5px #4d5155;
-    height: 16vh;
-    width: 45vw;
-    position: absolute;
-    top: 80vh;
-    left: 6vw;
-}
-#viewTitle{
-    position: absolute;
-    left: 6.5vw;
-    cursor: initial;
+    min-height: 16vh;
+    width: 80% ;
+	padding: 1vh;
 }
 #userBio{
-    position: absolute;
+	width: 75%;
+    text-align: center;
     color: white;
-    left: 6vw;
-    top: 25vh;
+	margin-bottom: 0;
 }
 #userProjects{
-    position: absolute;
+	width: 75%;
+	text-align:center;
     color: white;
-    left: 6vw;
-    top: 75vh;
+	margin-bottom: 0;
 }
 /*#contactBox{
     width: 60%;
