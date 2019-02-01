@@ -641,7 +641,7 @@ button {
 #titleBoxSide{
     width: 100%;
     text-align: center;
-    top: 11vh;
+    top: 20vh;
     position: absolute;
 }
 .profileImageUpload{
@@ -708,8 +708,7 @@ button {
 }
 .profileNameBox{
 	width: 100%;
-    position: absolute;
-    top: 20%;
+    margin-top: 25vh;
     text-align: center;
 }
 #profileName{
@@ -722,9 +721,8 @@ button {
     font-size: 4vh;
     border-radius: 10%;
     color: #40e080;
-    padding: 1vh;
     transition: 0.5s ease;
-    top: 16vh;
+    top: 20vh;
     right: 2.5vw;
 }
 #openPref:hover{
@@ -994,34 +992,31 @@ button {
 	padding: 2vh;
 }
 #contactView{
+	width: 100%;
+	text-align: center;
     color: white;
-    position: absolute;
-    top: 28vh;
-    left: 5.1vw;
 }
 #gitHubInfo{
+	width: 100%;
+	text-align: center;
     color: white;
-    position: absolute;
-    top: 45vh;
-    left: 7vw;
 }
 #gitHubInfoTitle{
+	width: 100%;
+	text-align: center;
     color: white;
-    position: absolute;
-    top: 40vh;
-    left: 6.5vw;
+	margin-bottom: 0;
 }
 #emailInfo{
+	width: 100%;
+	text-align: center;
     color: white;
-    position: absolute;
-    top: 65vh;
-    left: 8.5vw;
 }
 #emailInfoTitle{
+	width: 100%;
+	text-align: center;
     color: white;
-    position: absolute;
-    top: 60vh;
-    left: 8.5vw;
+	margin-bottom: 0;
 }
 .bioBox{
     width: 75%;
