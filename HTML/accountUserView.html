@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Account View</title>
-    <script src="squareAnimation.js"></script>
-    <script src="script.js"></script>
-    <script src="sketch.js"></script>
-    <script src="sideParticles.js"></script>
+    <title>Account Creator</title>
+
+    <script src="../JS/squareAnimation.js"></script>
+    <script src="../JS/script.js"></script>
+    <script src="../JS/sketch.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
+
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+
+    <link rel="stylesheet" href="../CSS/quill.snow.css"/>
+    <link rel="stylesheet" href="../CSS/quill.core.css"/>
+    <link rel="stylesheet" href="../CSS/quill.bubble.css"/>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
@@ -21,9 +27,6 @@
     <a class="option" href="./signup.html">
         Signup
     </a>
-    <a class="option" href="./about.html">
-        About
-    </a>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
         <i class="fa fa-bars"></i>
     </a>
@@ -35,10 +38,40 @@
     <a class="optionResponsive">
         Signup
     </a>
-    <a class="optionResponsive">
-        About
-    </a>
 </div>
+<div id="layerProfile">
+    <div id="titleBoxProfile">
+        <div class="signTitle">USERNAME HERE</div>
+    </div>
+    <p id="userBio"> USER INFORMATION HERE </p>
+    <div id="contentProfile">
+        <img src="../IMAGES/img_avatar.png" class="profileImageUpload">
+        <div id="openPref" class="titleUnderline" onclick="prefOpen()"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>Expand User Information</div>
+    </div>
+    <div id="currentProjects">
 
+    </div>
+</div>
+<div class="outerLayer">
+    <div id="topPrefView">
+        <div id="layerSideProfile">
+            <div id="titleBoxSide">
+                <div class="signTitle">Preferences</div>
+            </div>
+            <div id="contentProfileSide">
+                <img src="../IMAGES/img_avatar.png" class="profileImageUpload" style="left: 15%;top: 30%;position: absolute;">
+                <button class="imageChooser">Choose an Image</button> <!-- Opens explorer of some kind to pick an image -->
+                <p id="emailInfo">EMAIL</p>
+                <p id="gitHubInfo">GITHUB LINK</p>
+            </div>
+        </div>
+    </div>
+</div>
+<canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>
+<script type="text/javascript" src="../JS/sideParticles.js"></script>
+
+<script type="text/javascript" src="../JS/jquery.min.js"></script>
+<script type="text/javascript" src="../JS/quill.min.js"></script>
+<script type="text/javascript" src="../JS/text_editor.js"></script>
 </body>
 </html>

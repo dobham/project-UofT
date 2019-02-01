@@ -95,3 +95,18 @@ function prefOpen(){
         close = true;
     }
 }
+
+var close = true;
+function prefOpen(){
+    document.getElementById("topPrefView").style.transition = "0.5s cubic-bezier(1, -0.33, 0, 1.38)";
+    console.log(close);
+    if(close){
+        document.getElementById("topPrefView").style.right = "0";
+        close = false;
+        console.log(close);
+    }
+    else if (!close){
+        document.getElementById("topPrefView").style.right = "-20vw";
+        close = true;
+    }
+}

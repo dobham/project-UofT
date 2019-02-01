@@ -597,6 +597,15 @@ button {
     z-index: 3;
     box-shadow: -1px 0 10px black;
  }
+#topPrefView{
+    position: absolute;
+    right: -20vw;
+    width: 20vw;
+    height: 100vh;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+}
 #bottomPref{
     position: absolute;
     right: 0;
