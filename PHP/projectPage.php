@@ -52,6 +52,6 @@
     <body>
         <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post"> 
         	<input type="submit" name="download" value="Download All">
-        	<input type='submit' name='Homepage' value='Homepage' formaction="project/homepage.php">
+        	<input type='submit' name='Homepage' value='Homepage' formaction="/project/homepage.php">
         </form>       
     </body>
