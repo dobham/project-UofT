@@ -586,7 +586,15 @@ button {
      z-index: 2;
      box-shadow: -1px 0 10px black;
  }
-
+#topPrefView{
+    position: absolute;
+    right: -20vw;
+    width: 20vw;
+    height: 100vh;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+}
 #topPref{
     position: absolute;
 	top: 10vh;
@@ -715,7 +723,7 @@ button {
     color: #40e080;
     padding: 1vh;
     transition: 0.5s ease;
-    top: 20vh;
+    top: 16vh;
     right: 2.5vw;
 }
 #openPref:hover{
@@ -987,6 +995,59 @@ button {
 	text-align: center;
 	padding: 2vh;
 }
+#contactView{
+    color: white;
+    position: absolute;
+    top: 28vh;
+    left: 5.1vw;
+}
+#gitHubInfo{
+    color: white;
+    position: absolute;
+    top: 45vh;
+    left: 7vw;
+}
+#gitHubInfoTitle{
+    color: white;
+    position: absolute;
+    top: 40vh;
+    left: 6.5vw;
+}
+#emailInfo{
+    color: white;
+    position: absolute;
+    top: 65vh;
+    left: 8.5vw;
+}
+#emailInfoTitle{
+    color: white;
+    position: absolute;
+    top: 60vh;
+    left: 8.5vw;
+}
+#bioInfo{
+    background-color: white;
+    margin-bottom: 2vh;
+    border-radius: 0 0 5px 5px;
+    border: ridge 2.5px #4d5155;
+    height: 40vh;
+    width: 45vw ;
+    position: absolute;
+    top: 30vh;
+    left: 6vw;
+}
+#viewTitle{
+    position: absolute;
+    left: 6.5vw;
+    cursor: initial;
+}
+#userBio{
+    position: absolute;
+    color: white;
+    left: 6vw;
+    top: 25vh;
+}
+
 /*#contactBox{
     width: 60%;
     min-height: 20vh;
