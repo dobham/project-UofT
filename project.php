@@ -31,12 +31,14 @@
 <br>
 <script>
 function claim(){
-  console.log("hello");
   document.getElementById("claim").value = "Claimed!";
 }
 </script>
 <form method="post">
 <input type="submit" name="claim" id="claim" value="Claim">
+</form>
+<form method="post">
+  <input type="submit" name="download" value="Download All">
 </form>
 <?php
 if(isset($_POST["claim"])){
@@ -52,7 +54,8 @@ if(isset($_POST["claim"])){
 
 }
 echo "<br>";
-$dir = getcwd();//"/uploads/".$_SESSION['user']."/".$_SESSION['dir']."/";
+
+$dir = "uploads/".$_SESSION['user']."/".$projName."/";
 //$options = "";
 if (is_dir($dir)){
     if ($dh = opendir($dir)){
@@ -68,8 +71,7 @@ if (is_dir($dir)){
     }
 }
 if(isset($_POST['download'])){
-
-  $dir = getcwd();
+echo "test";
   if (is_dir($dir)){
       if ($dh = opendir($dir)){
         while (($file = readdir($dh)) !== false){
@@ -95,8 +97,6 @@ if(isset($_POST['download'])){
 
 }
 ?>
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-  <input type="submit" name="download" value="Download All">
-</form>
+
 </body>
 </html>
