@@ -15,6 +15,17 @@ body {
 }
 canvas {
     position: absolute;
+	margin-top: -1px;
+}
+a{
+	color: limegreen;
+}
+a:hover{
+	color: lightgreen;
+}
+.centerDiv{
+	width: 100%;
+	text-align: center;
 }
 .topnav {
 	width: 100%;
@@ -151,7 +162,6 @@ canvas {
 }*/
 
 button {
-    text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
@@ -756,6 +766,26 @@ button {
     border-radius: 10%;
     color: #40e080;
 }
+.bigTitle {
+    display: inline-block;
+    font-size: 5vh;
+    border-radius: 10%;
+    color: #40e080;
+}
+.bigSubtitle{
+    width: 100%;
+	font-size: 4vh;
+	text-align: center;
+    color: rgb(240,240,240);
+}
+
+.smallTitle {
+    display: inline-block;
+    font-size: 3vh;
+    border-radius: 10%;
+    color: #40e080;
+}
+
 .switchLayer {
     text-align: center;
     top: 85vh;
@@ -807,6 +837,10 @@ button {
 		width: 99vw;
 	}
     #layerProfile{
+		width: 100%;
+		left: 0;
+	}
+    #layerCreate{
 		width: 100%;
 		left: 0;
 	}
@@ -876,7 +910,7 @@ button {
 	left: 70%;
 }
 #editorBox{
-	background-color: white;
+	background-color: rgb(240,240,240);
 	margin-bottom: 2vh;
     border-radius: 0 0 5px 5px;
     /*width: 60%;
@@ -897,7 +931,7 @@ button {
 	text-align: center;
 }
 #editorContact{
-	background-color: white;
+	background-color: rgb(240,240,240);
 	margin-bottom: 2vh;
     border-radius: 0 0 5px 5px;
     /*width: 60%;
@@ -994,28 +1028,28 @@ button {
 #contactView{
 	width: 100%;
 	text-align: center;
-    color: white;
+    color: rgb(240,240,240);
 }
 #gitHubInfo{
 	width: 100%;
 	text-align: center;
-    color: white;
+    color: rgb(240,240,240);
 }
 #gitHubInfoTitle{
 	width: 100%;
 	text-align: center;
-    color: white;
+    color: rgb(240,240,240);
 	margin-bottom: 0;
 }
 #emailInfo{
 	width: 100%;
 	text-align: center;
-    color: white;
+    color: rgb(240,240,240);
 }
 #emailInfoTitle{
 	width: 100%;
 	text-align: center;
-    color: white;
+    color: rgb(240,240,240);
 	margin-bottom: 0;
 }
 .bioBox{
@@ -1025,7 +1059,7 @@ button {
 
 #bioInfo{
 	display: inline-block;
-    background-color: white;
+    background-color: rgb(240,240,240);
     border-radius: 5px;
     border: ridge 2.5px #4d5155;
     min-height: 3em;
@@ -1039,7 +1073,7 @@ button {
 
 #tablesProfile{
 	display: inline-block;
-    background-color: white;
+    background-color: rgb(240,240,240);
     border-radius: 5px;
     border: ridge 2.5px #4d5155;
     min-height: 16vh;
@@ -1049,15 +1083,30 @@ button {
 #userBio{
 	width: 75%;
     text-align: center;
-    color: white;
+    color: rgb(240,240,240);
 	margin-bottom: 0;
 }
 #userProjects{
 	width: 75%;
 	text-align:center;
-    color: white;
+    color: rgb(240,240,240);
 	margin-bottom: 0;
 }
+.descriptBox{
+    width: 100%;
+	text-align: center;
+}
+.descript{
+	display: inline-block;
+    background-color: rgb(240,240,240);
+    border-radius: 5px;
+    border: ridge 2.5px #4d5155;
+    min-height: 3em;
+    width: 90% ;
+	padding: 1vh;
+	margin-bottom:6vh;
+}
+
 /*#contactBox{
     width: 60%;
     min-height: 20vh;
