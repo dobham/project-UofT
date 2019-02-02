@@ -48,7 +48,9 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo "<td>".$row['host']."</td>";
         echo "<td>".$row['project_name']."</td>";
-        echo "<td>".$row['comments']."</td>";
+		$comments = str_replace('><', '> <', $row['comments']);
+		$comments = strip_tags($comments);
+        echo "<td style='white-space: nowrap; text-overflow: ellipsis;'>".$comments."</td>";
 ?>
 <td>
 <form action="project.php" method="GET" style="display: inline;">
