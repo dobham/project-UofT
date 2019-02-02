@@ -1,8 +1,35 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
     <link rel="stylesheet" href="includes/tableStyle.css" />
 </head>
 <body>
+<div class="topnav" id="myTopnav">
+    <a class="option active" href="index.php">
+        Project University
+    </a>
+    <a class="option" href="login.php">
+        Login
+    </a>
+    <a class="option" href="signup.php">
+        Signup
+    </a>
+    <a href="javascript:void(0);" class="icon" onclick="expand()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<div class="side" id="sideResponsive">
+    <a class="optionResponsive">
+        Login
+    </a>
+    <a class="optionResponsive">
+        Signup
+    </a>
+</div>
+<br><br><br>
 <table id="work">
   <tr>
     <th width="15%">User</th>

@@ -13,9 +13,19 @@ body {
 	height: 100vh;
 	border: none;
 }
-canvas{
-	position: absolute;
-	left: 0;
+canvas {
+    position: absolute;
+	margin-top: -1px;
+}
+a{
+	color: limegreen;
+}
+a:hover{
+	color: lightgreen;
+}
+.centerDiv{
+	width: 100%;
+	text-align: center;
 }
 .topnav {
 	width: 100%;
@@ -152,7 +162,6 @@ canvas{
 }*/
 
 button {
-    text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
@@ -302,7 +311,7 @@ button {
 #searchOverlayButton:before {
     background-color: #40e080;
     top: 0;
-    left: 0px;
+    left: 0;
 }
 #searchOverlayButton:after {
     background-color: white;
@@ -314,7 +323,7 @@ button {
     transform: skewx(0deg);
 }
 #searchOverlayButton:hover:after {
-    left: 0px;
+    left: 0;
 }
 #searchOverlayButton:hover:before {
     left: 50%;
@@ -322,7 +331,7 @@ button {
 
 
 #searchButton {
-    box-shadow:inset 0px 1px 0px 0px #40E080;
+    box-shadow:inset 0 1px 0 0 #40E080;
     background:linear-gradient(to bottom, #40E080 5%, #2be09a 100%);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#40E080', endColorstr='#40E080',GradientType=0);
     background-color:#40E080;
@@ -573,15 +582,36 @@ button {
      right: 0;
      width: 80vw;
      height: 100vh;
+	 overflow-x: auto;
      background-color: #4d5155;
      z-index: 2;
      box-shadow: -1px 0 10px black;
  }
-#topPref{
+ #layerCreate{
+     position: absolute;
+	 overflow-y: auto;
+     right: 0;
+     width: 80vw;
+     height: 100vh;
+     background-color: #4d5155;
+     z-index: 2;
+     box-shadow: -1px 0 10px black;
+ }
+#topPrefView{
     position: absolute;
     right: -20vw;
     width: 20vw;
-    height: 93vh;
+    height: 100vh;
+    background-color: #616569;
+    z-index: 3;
+    box-shadow: -1px 0 10px black;
+}
+#topPref{
+    position: absolute;
+	top: 10vh;
+    right: -20vw;
+    width: 20vw;
+    height: 90vh;
     background-color: #616569;
     z-index: 3;
     box-shadow: -1px 0 10px black;
@@ -589,7 +619,7 @@ button {
 #bottomPref{
     position: absolute;
     right: 0;
-    top: 93vh;
+    bottom: 1vh;
     width: 20vw;
     height: 7vh;
     border-radius: 10px;
@@ -615,14 +645,13 @@ button {
 #titleBoxProfile{
     width: 100%;
     text-align: center;
-    top: 16vh;
-    left: -11vw;
-    position: absolute;
+    margin-top: 16vh;
+	margin-bottom: 5vh;
 }
 #titleBoxSide{
     width: 100%;
     text-align: center;
-    top: 16vh;
+    top: 20vh;
     position: absolute;
 }
 .profileImageUpload{
@@ -687,22 +716,23 @@ button {
 #gitHubLink:focus{
     width: 83%;
 }
-#profileName{
-    position: absolute;
-    top: 50%;
+.profileNameBox{
+	width: 100%;
+    margin-top: 25vh;
     text-align: center;
+}
+#profileName{
+	display: inline-block;
     color: white;
 }
 
 #openPref {
-    display: inline-block;
+    position: absolute;
     font-size: 4vh;
     border-radius: 10%;
     color: #40e080;
-    padding: 1vh;
     transition: 0.5s ease;
-    position: absolute;
-    top: 42vh;
+    top: 20vh;
     right: 2.5vw;
 }
 #openPref:hover{
@@ -736,6 +766,26 @@ button {
     border-radius: 10%;
     color: #40e080;
 }
+.bigTitle {
+    display: inline-block;
+    font-size: 5vh;
+    border-radius: 10%;
+    color: #40e080;
+}
+.bigSubtitle{
+    width: 100%;
+	font-size: 4vh;
+	text-align: center;
+    color: rgb(240,240,240);
+}
+
+.smallTitle {
+    display: inline-block;
+    font-size: 3vh;
+    border-radius: 10%;
+    color: #40e080;
+}
+
 .switchLayer {
     text-align: center;
     top: 85vh;
@@ -786,6 +836,14 @@ button {
     #layerSignup{
 		width: 99vw;
 	}
+    #layerProfile{
+		width: 100%;
+		left: 0;
+	}
+    #layerCreate{
+		width: 100%;
+		left: 0;
+	}
 }
 
 .topTitleContainer{
@@ -801,6 +859,7 @@ button {
 .titleUnderline{
     display: inline-block;
     cursor: pointer;
+	
 }
 .titleUnderline:after {
     display:block;
@@ -851,7 +910,10 @@ button {
 	left: 70%;
 }
 #editorBox{
-    width: 60%;
+	background-color: rgb(240,240,240);
+	margin-bottom: 2vh;
+    border-radius: 0 0 5px 5px;
+    /*width: 60%;
     min-height: 20vh;
     background-color: white;
     padding: 1vh;
@@ -861,16 +923,39 @@ button {
     height: 45vh;
     position: absolute;
     top: 35vh;
-    left: 5vw;
+    left: 5vw;*/
+}
+.editContainor {
+    width: 70%;
+	padding-left: 2.5%;
+	text-align: center;
+}
+#editorContact{
+	background-color: rgb(240,240,240);
+	margin-bottom: 2vh;
+    border-radius: 0 0 5px 5px;
+    /*width: 60%;
+    min-height: 20vh;
+    background-color: white;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: ridge;
+    text-align: justify;
+    height: 45vh;
+    position: absolute;
+    top: 45vh;
+    left: 20vw;*/
+}
+#toolbar{
+    position: absolute;
+    left: 60%;
+    top: 0;
 }
 .tag {
     color: white;
     border-radius: 5px;
     background-color: #40e080;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     text-decoration: none;
     transition: 0.5s ease;
     position: relative;
@@ -894,26 +979,147 @@ button {
     background-color:red;
 }
 .target{
-    background-color: white;
     position: absolute;
     top: 88vh;
     left: 5vw;
-    border: solid 2px white;
-    width: 26.5vw;
-    height: 4vh;
+    border: none;
     border-radius: 5px;
-    padding-top: 15px;
+
 }
+.custom-file-input {
+	width: 200px
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Files';
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
 #postTitle{
-    position: absolute;
-    top: 22vh;
-    left: 5vw;
+	margin-bottom: 2vh;
 }
-#textBox{
-    position: absolute;
-    top: 82vh;
-    left: 5vw;
+#postCreateForm{
+	text-align: center;
+	padding: 2vh;
 }
+#contactView{
+	width: 100%;
+	text-align: center;
+    color: rgb(240,240,240);
+}
+#gitHubInfo{
+	width: 100%;
+	text-align: center;
+    color: rgb(240,240,240);
+}
+#gitHubInfoTitle{
+	width: 100%;
+	text-align: center;
+    color: rgb(240,240,240);
+	margin-bottom: 0;
+}
+#emailInfo{
+	width: 100%;
+	text-align: center;
+    color: rgb(240,240,240);
+}
+#emailInfoTitle{
+	width: 100%;
+	text-align: center;
+    color: rgb(240,240,240);
+	margin-bottom: 0;
+}
+.bioBox{
+    width: 75%;
+	text-align: center;
+}
+
+#bioInfo{
+	display: inline-block;
+    background-color: rgb(240,240,240);
+    border-radius: 5px;
+    border: ridge 2.5px #4d5155;
+    min-height: 3em;
+    width: 80% ;
+	padding: 1vh;
+}
+.tableBox{
+    width: 75%;
+	text-align: center;
+}
+
+#tablesProfile{
+	display: inline-block;
+    background-color: rgb(240,240,240);
+    border-radius: 5px;
+    border: ridge 2.5px #4d5155;
+    min-height: 16vh;
+    width: 80% ;
+	padding: 1vh;
+}
+#userBio{
+	width: 75%;
+    text-align: center;
+    color: rgb(240,240,240);
+	margin-bottom: 0;
+}
+#userProjects{
+	width: 75%;
+	text-align:center;
+    color: rgb(240,240,240);
+	margin-bottom: 0;
+}
+.descriptBox{
+    width: 100%;
+	text-align: center;
+}
+.descript{
+	display: inline-block;
+    background-color: rgb(240,240,240);
+    border-radius: 5px;
+    border: ridge 2.5px #4d5155;
+    min-height: 3em;
+    width: 90% ;
+	padding: 1vh;
+	margin-bottom:6vh;
+}
+
+/*#contactBox{
+    width: 60%;
+    min-height: 20vh;
+    background-color: white;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: ridge;
+    text-align: justify;
+    height: 45vh;
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+}*/
 /*
 #layer2 {
     height: 100%;

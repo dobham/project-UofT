@@ -850,7 +850,17 @@
   box-sizing: border-box;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 8px;
-  width: 85%;
+  /*position: absolute;
+  top: 30vh;
+  left: 5vw;
+  width: 48vw;*/
+  background-color: #40E080;
+  border-radius: 5px 5px 0 0;
+  transition: 0.1s ease;
+}
+.ql-toolbar.ql-snow:hover{
+  background-color: white;
+  transition: 0.1s ease;
 }
 .ql-toolbar.ql-snow .ql-formats {
   margin-right: 15px;
