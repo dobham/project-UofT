@@ -56,47 +56,90 @@ if(isset($_POST["claim"])){
 echo "<br>";
 
 $dir = "uploads/".$_SESSION['user']."/".$projName."/";
-//$options = "";
+$files = array();
+$dh = opendir($dir);
+$file = readdir($dh);
 if (is_dir($dir)){
     if ($dh = opendir($dir)){
       while (($file = readdir($dh)) !== false){
         if($file != '.' && $file != '..' && $file!="index.php"){
-               // select option with files names
-               //$options = $options."<option>$file</option>";
-               // display the file names
-               echo $file."<br>";
+              array_push($files,$file);
+              echo "<a style=' color: blue;' href='".$dir.$file."'download>$file</a><br>";
             }
          }
       closedir($dh);
     }
 }
 if(isset($_POST['download'])){
-echo "test";
-  if (is_dir($dir)){
-      if ($dh = opendir($dir)){
-        while (($file = readdir($dh)) !== false){
-          if($file != '.' && $file != '..' && $file!="index.php"){
-                if (file_exists($dir.$file)) {
-              header('Content-Description: File Transfer');
-              header('Content-Type: application/octet-stream');
-              header('Content-Disposition: attachment; filename="'.basename($file).'"');
-              header('Expires: 0');
-              header('Cache-Control: must-revalidate');
-              header('Pragma: public');
-              header('Content-Length: ' . filesize($file));
-              readfile($file);
-              exit;
-          }
-              }
-          }
-        closedir($dh);
-      }
+$arr = array('\\','?','%','*');
+$fileName = str_replace($arr,"",$projName);
+$fileName = str_replace(" ","_",$fileName);
+$fileName = "project_files/".$fileName;
+  if (!is_dir("$fileName")) {
+      mkdir("$fileName");
   }
-  $file = 'monkey.gif';
+
+foreach($files as $file){
+  copy($dir.$file,$fileName."/".$file);
+}
+
+  if(extension_loaded('zip'))
+  {
+       if(isset($files) and count($files) > 0)
+       {
+            $zip = new ZipArchive();
+            $zip_name = $projName.".rar";
+            if($zip->open($zip_name, ZIPARCHIVE::CREATE)!==TRUE)
+            {
+              echo "error in archiving files";
+            }
+            foreach($files as $file)
+            {
+                 $zip->addFile($fileName."/".$file);
+
+            }
+            $zip->close();
+            if(file_exists($zip_name))
+            {
+
+                 header('Content-type: application/zip');
+                 header('Content-Disposition: attachment; filename="'.$zip_name.'"');
+                 readfile($zip_name);
+                 unlink($zip_name);
+
+            }
+       }
+       else
+       {
+            echo "There are no files ";
+       }
+  }
+
+
+foreach($files as $file){
+  echo "a";
+  if(file_exists($fileName."/".$file)){
+    unlink($fileName."/".$file);
+  }
+}
+rmdir($filename);
+
+  // the old and crappy method
+  // if (is_dir($dir)){
+  //     if ($dh = opendir($dir)){
+  //       while (($file = readdir($dh)) !== false){
+  //         if($file != '.' && $file != '..' && $file!="index.php"){
+  //             //  echo $dir;
+  //                echo $file."<a href='".$dir.$file."'download>$file</a><br>";
+  //             }
+  //          }
+  //       closedir($dh);
+  //     }
+  // }
+
 
 
 }
 ?>
-
 </body>
 </html>
