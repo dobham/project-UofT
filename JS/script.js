@@ -1,17 +1,26 @@
+let visible = false;
+let topnav = false;
 function expand() {
     let x = document.getElementById("myTopnav");
     let y = document.getElementById("sideResponsive");
-    if (y.style.visibility === "hidden") {
+    let z = document.getElementById("blur");
+    if (!visible) {
         y.style.visibility = "visible";
         y.style.transform = "translate(0px)";
+        z.style.filter = "blur(50px)";
+        visible = true;
     } else {
         y.style.visibility = "hidden";
         y.style.transform = "translate(1500px)";
+        z.style.filter = "blur(0px)";
+        visible = false;
     }
-    if (x.className === "topnav") {
+    if (!topnav) {
         x.className += " responsive";
+        topnav = true;
     } else {
         x.className = "topnav";
+        topnav = false;
     }
 }
 
@@ -32,24 +41,6 @@ function searchOverlayOff() {
         document.getElementById("searchOverlay").style.display = "none";
     }, delayInMilliseconds);
 }
-
-
-
-/*function openSearch() {
-    if (document.getElementById("searchBar").style.opacity == 1){
-        document.getElementById("searchBar").style.opacity = 0;
-        document.getElementById("searchBar").style.width = "50px";
-        document.getElementById("searchButton").style.left = "45%";
-    }
-    else{
-        document.getElementById("searchBar").style.opacity = 1;
-        document.getElementById("searchButton").style.left = "33%";
-        if (document.getElementById("searchBar").style.opacity == 1){
-            document.getElementById("searchBar").style.width = "450px";
-        }
-    }
-}*/
-
 
 function openSearch() {
     if (document.getElementById("searchBar").style.opacity == 1){

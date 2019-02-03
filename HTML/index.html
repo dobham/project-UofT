@@ -11,9 +11,9 @@
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="option active" href="./index.html">
+    <div class="option active" href="./index.html">
         Project University
-    </a>
+    </div>
     <a class="option" href="./login.html">
         Login
     </a>
@@ -25,12 +25,12 @@
     </a>
 </div>
 <div class="side" id="sideResponsive">
-    <a class="optionResponsive">
+    <button class="optionResponsive">
         Login
-    </a>
-    <a class="optionResponsive">
+    </button>
+    <button class="optionResponsive">
         Signup
-    </a>
+    </button>
 </div>
 <div id="searchOverlay">
     <h1 id="overlayText">
@@ -40,6 +40,7 @@
     <input id="searchBar" placeholder="Find a project to work on now!"><button id="searchButton" onclick="openSearch()"><i class="fa fa-search"></i></button>
     <button onclick="searchOverlayOff()" id="searchClose">Close</button>
 </div>
+<div id="blur">
 <div class="container" id="createContainer">
     <div id="create">
         <h2 id="createInfo">
@@ -110,6 +111,6 @@
         </div>
     </div>
 </div>
-<canvas id="canvas" height="100%" width="100%"></canvas>
+<canvas id="canvas" height="100%" width="100%"></canvas></div>
 </body>
 </html>
