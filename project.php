@@ -70,64 +70,59 @@ if (is_dir($dir)){
       closedir($dh);
     }
 }
-$down = false;
 if(isset($_POST['download'])){
-$down = true;
 $arr = array('\\','?','%','*');
 $fileName = str_replace($arr,"",$projName);
 $fileName = str_replace(" ","_",$fileName);
+$fileName = "project_files/".$fileName;
   if (!is_dir("$fileName")) {
       mkdir("$fileName");
   }
 
-  rmdir("$fileName");
 foreach($files as $file){
   copy($dir.$file,$fileName."/".$file);
 }
 
   if(extension_loaded('zip'))
   {
-       // Checking ZIP extension is available
        if(isset($files) and count($files) > 0)
        {
-            // Checking files are selected
-            $zip = new ZipArchive(); // Load zip library
-            $zip_name = $projName.".zip";           // Zip name
+            $zip = new ZipArchive();
+            $zip_name = $projName.".zip";
             if($zip->open($zip_name, ZIPARCHIVE::CREATE)!==TRUE)
             {
-                 // Opening zip file to load files
-                 $error .= "* Sorry ZIP creation failed at this time";
+              echo "error in archiving files";
             }
             foreach($files as $file)
             {
-                 $zip->addFile($fileName."/".$file); // Adding files into zip
+                 $zip->addFile($fileName."/".$file);
 
             }
             $zip->close();
             if(file_exists($zip_name))
             {
-                 // push to download the zip
 
                  header('Content-type: application/zip');
                  header('Content-Disposition: attachment; filename="'.$zip_name.'"');
                  readfile($zip_name);
-                 // remove zip file is exists in temp path
                  unlink($zip_name);
 
             }
        }
        else
        {
-            $error .= "There are no files ";
+            echo "There are no files ";
        }
   }
-  else
-  {
-       $error .= "* You dont have ZIP extension";
+
+
+foreach($files as $file){
+  echo "a";
+  if(file_exists($fileName."/".$file)){
+    unlink($fileName."/".$file);
   }
-
-
-
+}
+rmdir($filename);
 
   // the old and crappy method
   // if (is_dir($dir)){
@@ -143,9 +138,7 @@ foreach($files as $file){
   // }
 
 
-}
-if($down){
-    echo "haweklrjfhszdkjl";
+
 }
 ?>
 </body>
