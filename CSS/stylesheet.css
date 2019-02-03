@@ -41,27 +41,23 @@ a:hover{
 	height: 100%;
     float: left;
     display: block;
+	min-width: 15%;
     color: #f2f2f2;
     text-align: center;
     padding: 0 5px 0 5px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: calc(10px + 1vw);
 	line-height: 10vh;
 	transition: 0.3s;
 }
 .topnav a {
-    width: 10%;
 }
 .topnav a:hover {
-    width: 10%;
-    font-size: 30px;
+    font-size: calc(10px + 2vw);
 }
 .topnav .active {
-    font-size: 25px;
-    padding-right: 2vw;
-    padding-left: 2vw;
+	width: 27%;
 }
-
 .topnav .option:hover {
     background-color: #ddd;
     color: black;
@@ -84,6 +80,9 @@ a:hover{
         top: 1%;
         display: block;
     }
+	.topnav .active {
+		width: 50%;
+	}
 }
 
 @media (max-width: 768px) {
