@@ -1,28 +1,43 @@
 <html lang="en">
   <head>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="519061711949-jc7dhk910o2f4bpa5f7rnbh9o2gt2e9i.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="519061711949-9tbcqj0td8ufouul9jfaapr0ar248kr6.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
 
     <div id="loginPopTest">
-     <!--  <script>
+<?php
+session_start();
+foreach($_COOKIE as $key => $value){
+  if (isset($_COOKIE[$key])) {
+      unset($_COOKIE[$key]);
+      setcookie($key, '', time() - 3600);
+  }
+}
+session_destroy();
+session_unset();
+  session_start();
+?>
+      <script>
         function onSignIn(googleUser){
+          document.cookie = "fname=; lname=; profpic=; email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           console.log(document.cookie);
           var profile = googleUser.getBasicProfile();
           var fname = profile.getGivenName();
           var lname = profile.getFamilyName();
           var profPic = profile.getImageUrl();
           var email = profile.getEmail();
+          //var isset = TRUE;
           document.cookie = "fname="+fname+ ";";
           document.cookie = "lname="+lname+ ";";
           document.cookie = "profPic="+profPic+ ";";
           document.cookie = "email="+email+ ";";
+          window.location.href = "homepage.php";
           console.log(document.cookie);
-          window.location.href = "login.php";
+          //document.writeln(email);
         };
-      </script> -->
+      </script>
         <form id="login" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
           <input type="text" name="user" placeholder="Username">
           <input type="password" name="pass" placeholder="Password">
@@ -31,19 +46,19 @@
         <form id="signup" action="signup.php" method="post">
           <input type="submit" name="signup" value="signup">
         </form>
-        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <form method="post">
+
+            <div name = "google" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        </form>
     </div>
 
 
 <?php
-  
-    session_start();
+
+    //session_start();
     include "connect.php";
-    $fname = isset($_COOKIE['fname'])?$_COOKIE['fname']:null;
-    $lname = isset($_COOKIE['lname'])?$_COOKIE['lname']:null;
-    $profPic =isset($_COOKIE['profPic'])?$_COOKIE['profPic']:null;
-    $email = isset($_COOKIE['email'])?$_COOKIE['email']:null;
-    if($fname == null){
+
+     // if($fname == null){
       if(isset($_POST['login'])){
         //normal sign-in
         $user = $_POST['user'];
@@ -56,7 +71,6 @@
           $_SESSION['user']=$user;
           while($row = $result->fetch_assoc()){
             if($pass==$row['password']){
-              // someone set up a session var or cookie with all of the data from the db
               header('location: homepage.php');
             }else{
               header('location: login.php');
@@ -67,12 +81,12 @@
         }
         $conn->close();
       }
-    }else{
-      //google sign-in
-      echo "ur using google sigin".$fname;
-      header('location: homepage.php');
-    }
-  
+    // }else{
+    //   //google sign-in
+    //   echo "ur using google sigin".$fname;
+    //   header('location: homepage.php');
+    // }
+
 ?>
 </body>
 </html>
