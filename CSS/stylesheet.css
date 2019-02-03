@@ -41,25 +41,22 @@ a:hover{
 	height: 100%;
     float: left;
     display: block;
+	min-width: 15%;
     color: #f2f2f2;
     text-align: center;
     padding: 0 5px 0 5px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: calc(10px + 1vw);
 	line-height: 10vh;
 	transition: 0.3s;
 }
 .topnav a {
-    width: 10%;
 }
 .topnav a:hover {
-    width: 10%;
-    font-size: 30px;
+    font-size: calc(10px + 2vw);
 }
 .topnav .active {
-    font-size: 25px;
-    padding-right: 2vw;
-    padding-left: 2vw;
+	width: 27%;
 }
 
 .topnav .option:hover {
@@ -92,6 +89,9 @@ a:hover{
         position: absolute;
         top: 5%;
     }
+	.topnav .active {
+		width: 50%;
+	}
 }
 .side{
     position: absolute;
@@ -290,6 +290,58 @@ button {
     left: 0;
 }
 #createButton:hover:before {
+    left: 50%;
+}
+.smallRow {
+	text-align: center;
+	margin-top: 10%;
+	position: static;
+	bottom: 30vh;
+	width: 100%;
+}
+
+.smallButton {
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+	min-width: 200px;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    color: #333333;
+    border: none;
+    font-size: 25px;
+    z-index: 1;
+    position: relative;
+	white-space: nowrap;
+	/*padding: 20px 40px 20px 40px;*/
+}
+.smallButton:after, .smallButton:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(10deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+.smallButton:before {
+    background-color: white;
+    top: 0;
+    left: 00px;
+}
+.smallButton:after {
+    background-color: #40e080;
+    top: 0.5rem;
+    left: 50%;
+}
+.smallButton:hover:before, .smallButton:hover:after {
+    top: 0;
+    transform: skewx(0deg);
+}
+.smallButton:hover:after {
+    left: 0;
+}
+.smallButton:hover:before {
     left: 50%;
 }
 
@@ -953,6 +1005,7 @@ button {
 .indexForm{
 	text-align: center;
     background-color: #36c374;
+	padding: 2vh;
 }
 .indexInput{
     height: 5vh;
@@ -960,6 +1013,7 @@ button {
 	border-radius: 5px;
 	padding-left: 5px;
     transition: 0.2s ease;
+	margin: 0.25vh 0 0.25vh 0;
 }
 .indexInput:focus{
     transition: all 0.5s;

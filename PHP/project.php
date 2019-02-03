@@ -18,13 +18,13 @@
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="option active" href="./index.html">
+    <a class="option active" href="./index.php">
         Project University
     </a>
-    <a class="option" href="./login.html">
+    <a class="option" href="./login.php">
         Login
     </a>
-    <a class="option" href="./signup.html">
+    <a class="option" href="./signup.php">
         Signup
     </a>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
@@ -77,19 +77,20 @@ function claim(){
     </div>
 	<div class="bigSubtitle">Description</div>
     <div class="descriptBox">
-        <p class="descript"><?php echo $description; ?><br><br>Contact Info:<br>{Contact Info they inputed}</p>
+        <div class="descript"><?php echo $description; ?><br><br>Contact Info:<br>{Contact Info they inputed}</div>
     </div>
 	<div class="centerDiv">
 		<form method="post" id="form1"></form>
 		<form method="post" id="form2"></form>
-		<button type="submit" name="claim" id="claim" form="form1" class="indexFormSubmitButton">
+		<button type="submit" name="claim" id="claim" form="form1" class="smallButton">
 			Claim
 		</button>
 	</div><br>
 		<div class="centerDiv">
-		<button type="submit" name="download" form="form2" class="indexFormSubmitButton">
+		<button type="submit" name="download" form="form2" class="smallButton">
 			Download
 		</button>
+		<br><br>
 <?php
 if(isset($_POST["claim"])){
   $sql = "UPDATE userinfo SET claimedProj = '$proj$projName,' WHERE id = $idClient;";
@@ -114,7 +115,7 @@ if (is_dir($dir)){
       while (($file = readdir($dh)) !== false){
         if($file != '.' && $file != '..' && $file!="index.php"){
               array_push($files,$file);
-              echo "<a style=' color: blue;' href='".$dir.$file."'download>$file</a><br>";
+              echo "<a href='".$dir.$file."'download>$file</a><br><br>";
             }
          }
       closedir($dh);

@@ -61,8 +61,8 @@
         <div id="contentLogin">
             <form class="indexForm" id="login_form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 				<input type="text" name="user" placeholder="Username" class="indexInput"><br>
-				<input type="password" name="pass" placeholder="Password" class="indexInput"><br>
-				<input type="submit" name="login" value="Login" class="indexFormSubmitButton"><br><br>
+				<input type="password" name="pass" placeholder="Password" class="indexInput"><br><br>
+				<button type="submit" name="login" class="smallButton">Login</button><br><br>
                 <a class="reoveryLink" href="#">Recover password</a><br>
             </form>
         </div>
@@ -84,8 +84,8 @@
 			<input type="text" name="user" placeholder="Username" class="indexInput"><br>
 			<input type="email" name="email" placeholder="Email" class="indexInput"><br>
 			<input type="password" name="pass" placeholder="Password" class="indexInput" id="pass" onkeyup='check();'><br>
-			<input type="password" name="c_pass" placeholder="Confirm Password" class="indexInput" id="c_pass" onkeyup='check();'><span id='message' ></span><br>
-			<input type="submit" name="create" value="Sign-Up" class="indexFormSubmitButton">
+			<input type="password" name="c_pass" placeholder="Confirm Password" class="indexInput" id="c_pass" onkeyup='check();'><span id='message' ></span><br><br>
+			<button type="submit" name="create" class="smallButton">Sign Up</button>
         </form>
         <!--<button type="submit" name="create" class="indexFormSubmitButton" form="signup_form">Sign Up</button-->
     </div>
