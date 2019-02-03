@@ -261,6 +261,7 @@ button {
     z-index: 1;
     position: relative;
 	white-space: nowrap;
+	padding: 20px 40px 20px 40px;
 }
 #createButton:after, #createButton:before {
     content: "";
@@ -273,7 +274,7 @@ button {
 }
 #createButton:before {
     background-color: white;
-    top: -0.5rem;
+    top: 0;
     left: 00px;
 }
 #createButton:after {
@@ -374,6 +375,7 @@ button {
     font-size: 25px;
     z-index: 1;
 	white-space: nowrap;
+	padding: 20px 40px 20px 40px;
 }
 #searchOverlayButton:after, #searchOverlayButton:before {
     content: "";
