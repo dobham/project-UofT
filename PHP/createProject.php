@@ -50,8 +50,8 @@
 		<input id="descInput" type="hidden" name="comment" value="">
 		<input type="text" id="textBox" class="indexInput" name="tagger" placeholder="Tags"><br><br>
 		<input type="file" name="uploaded_file[]" id="fileToUpload" class="custom-file-input" multiple>
-		<div class="target" contenteditable="false"></div><br>
-		<input type="submit" name="Submit" id="submitPost" class="indexFormSubmitButton" value="Go" action="" onclick="document.getElementById('descInput').value = document.getElementById('editorBox').children[0].innerHTML;">
+		<div class="target" contenteditable="false"></div><br><br>
+		<button type="submit" name="Submit" id="submitPost" class="smallButton" action="" onclick="document.getElementById('descInput').value = document.getElementById('editorBox').children[0].innerHTML;">Go</button>
     </form>
 </div>
 <!--

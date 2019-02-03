@@ -16,6 +16,7 @@ body {
 canvas {
     position: absolute;
 	top: -1px;
+	left: 0;
 }
 a{
 	color: limegreen;
