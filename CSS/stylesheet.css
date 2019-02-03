@@ -15,7 +15,7 @@ body {
 }
 canvas {
     position: absolute;
-	margin-top: -1px;
+	top: -1px;
 }
 a{
 	color: limegreen;
@@ -45,12 +45,21 @@ a:hover{
     text-align: center;
     padding: 0 5px 0 5px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
 	line-height: 10vh;
 	transition: 0.3s;
 }
+.topnav a {
+    width: 10%;
+}
+.topnav a:hover {
+    width: 10%;
+    font-size: 30px;
+}
 .topnav .active {
     font-size: 25px;
+    padding-right: 2vw;
+    padding-left: 2vw;
 }
 
 .topnav .option:hover {
@@ -92,7 +101,74 @@ a:hover{
     /*border: 5px #148dff solid;*/
     right: 0;
     transition: 0.5s ease;
+    z-index: 1;
 }
+#blur{
+    filter: blur(0px);
+    transition: 1s filter ease;
+}
+/*.optionResponsive{
+    width: 33%;
+    height: 6vh;
+    border-color: #fbfbfb;
+    border-radius: 10px;
+    background-color: #fbfbfb;
+    z-index:0;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size:150%;
+    margin-top: 10px;
+}
+.optionResponsive:hover{
+    border-color: rgb(64, 224, 128);
+    background-color: rgb(64, 224, 128);
+    color: white;
+}*/
+
+.optionResponsive {
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    color: #333333;
+    border: none;
+    position: relative;
+    font-size: 25px;
+    z-index: 1;
+    white-space: nowrap;
+}
+.optionResponsive:after, .optionResponsive:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(10deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+.optionResponsive:before {
+    background-color: #40e080;
+    top: 0;
+    left: 0;
+}
+.optionResponsive:after {
+    background-color: white;
+    top: 0.5rem;
+    left: 50%;
+}
+.optionResponsive:hover:before, .optionResponsive:hover:after {
+    top: 0;
+    transform: skewx(0deg);
+}
+.optionResponsive:hover:after {
+    left: 0;
+}
+.optionResponsive:hover:before {
+    left: 50%;
+}
+
 #searchOverlay{
     position: fixed;
     display: none;
@@ -185,6 +261,7 @@ button {
     z-index: 1;
     position: relative;
 	white-space: nowrap;
+	padding: 20px 40px 20px 40px;
 }
 #createButton:after, #createButton:before {
     content: "";
@@ -197,7 +274,7 @@ button {
 }
 #createButton:before {
     background-color: white;
-    top: -0.5rem;
+    top: 0;
     left: 00px;
 }
 #createButton:after {
@@ -298,6 +375,7 @@ button {
     font-size: 25px;
     z-index: 1;
 	white-space: nowrap;
+	padding: 20px 40px 20px 40px;
 }
 #searchOverlayButton:after, #searchOverlayButton:before {
     content: "";
@@ -563,7 +641,7 @@ button {
     right: 0;
     width: 80vw;
     height: 100vh;
-    background-color: #2f3337;
+    background-color: #25292d;
     z-index: 1;
     box-shadow: -1px 0 10px black;
 }
@@ -572,7 +650,7 @@ button {
      right: 0;
      width: 75vw;
      height: 100vh;
-     background-color: #4d5155;
+     background-color: #393d41;
      z-index: 2;
      box-shadow: -1px 0 10px black;
 	 overflow-y: auto;
@@ -589,10 +667,10 @@ button {
  }
  #layerCreate{
      position: absolute;
-	 overflow-y: auto;
+	 top: 0;
      right: 0;
      width: 80vw;
-     height: 100vh;
+     min-height: 100vh;
      background-color: #4d5155;
      z-index: 2;
      box-shadow: -1px 0 10px black;
@@ -633,7 +711,7 @@ button {
     right: 0;
     width: 70vw;
     height: 100vh;
-    background-color: #616569;
+    background-color: #43474b;
     z-index: 3;
     box-shadow: -1px 0 10px black;
 }
@@ -874,6 +952,7 @@ button {
 }
 .indexForm{
 	text-align: center;
+    background-color: #36c374;
 }
 .indexInput{
     height: 5vh;
@@ -885,6 +964,14 @@ button {
 .indexInput:focus{
     transition: all 0.5s;
     width: 35%;
+}
+#loginSide{
+    display: inline-block;
+    margin-top: 15vh;
+}
+#signupSide{
+    display: inline-block;
+    margin-top: 25vh;
 }
 .indexFormSubmitButton {
     width: 33%;
