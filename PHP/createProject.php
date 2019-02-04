@@ -18,27 +18,59 @@
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a class="option active" href="index.php">
+    <a class="option active" href="./index.php">
         Project University
     </a>
+	<?php
+	session_start();
+	include "connect.php";
+	if(isset($_SESSION['user'])){
+	?>
+    <a class="option" href="logout.php">
+        Logout
+    </a>
+	<?php
+	}else{
+	?>
     <a class="option" href="login.php">
         Login
     </a>
     <a class="option" href="signup.php">
         Signup
     </a>
+	}
+	<?php
+	}
+	?>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 <div class="side" id="sideResponsive">
-    <a class="optionResponsive">
-        Login
-    </a>
-    <a class="optionResponsive">
-        Signup
-    </a>
+    <div class="centerDiv">
+		<?php
+		if(isset($_SESSION['user'])){
+		?>
+		<a class="optionResponsive" id="loginSide" onclick="window.location.href='logout.php'">
+			Logout
+		</a>
+		<?php
+		}else{
+		?>
+        <button class="optionResponsive" id="loginSide" onclick="window.location.href='login.php'">
+            Login
+        </button>
+		<?php
+		}
+		?>
+    </div>
+    <div class="centerDiv">
+        <button class="optionResponsive" id="signupSide" onclick="window.location.href='signup.php'">
+            Signup
+        </button>
+    </div>
 </div>
+<div id="blur">
 <div id="layerCreate">
     <div id="titleBoxProfile">
         <div class="signTitle">Request A Project</div>
@@ -65,7 +97,6 @@
 <?php
 	if(isset($_POST['Submit'])){
 		session_start();
-		include "connect.php";
 		$projectName = $_POST['projectName'];
 		$comment = $_POST['comment'];
 		$files = $_FILES['uploaded_file'];
@@ -118,6 +149,7 @@
 }
 
 ?>
+</div>
 <canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>
 <script type="text/javascript" src="../JS/sideParticles.js"></script>
 

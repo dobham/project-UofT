@@ -24,6 +24,9 @@ a{
 a:hover{
 	color: lightgreen;
 }
+.sketch{
+	z-index: -1;
+}
 .centerDiv{
 	width: 100%;
 	text-align: center;
@@ -1248,7 +1251,14 @@ button {
 	padding: 1vh;
 	margin-bottom:6vh;
 }
-
+td>form>p,pre{
+	margin:0;
+	padding:0;
+	display:inline;
+}
+td{
+	white-space: nowrap;
+	text-overflow: ellipsis;
 /*#contactBox{
     width: 60%;
     min-height: 20vh;

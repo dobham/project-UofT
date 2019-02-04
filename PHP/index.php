@@ -14,26 +14,54 @@
     <a class="option active" href="./index.php">
         Project University
     </a>
-    <a class="option" href="./login.php">
+	<?php
+	session_start();
+	include "connect.php";
+	if(isset($_SESSION['user'])){
+	?>
+    <a class="option" href="logout.php">
+        Logout
+    </a>
+	<?php
+	}else{
+	?>
+    <a class="option" href="login.php">
         Login
     </a>
-    <a class="option" href="./signup.php">
+    <a class="option" href="signup.php">
         Signup
     </a>
+	}
+	<?php
+	}
+	?>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 <div class="side" id="sideResponsive">
-    <a class="optionResponsive">
-        Login
-    </a>
-    <a class="optionResponsive">
-        Signup
-    </a>
-    <a class="optionResponsive">
-        About
-    </a>
+    <div class="centerDiv">
+		<?php
+		if(isset($_SESSION['user'])){
+		?>
+		<a class="optionResponsive" id="loginSide" onclick="window.location.href='logout.php'">
+			Logout
+		</a>
+		<?php
+		}else{
+		?>
+        <button class="optionResponsive" id="loginSide" onclick="window.location.href='login.php'">
+            Login
+        </button>
+		<?php
+		}
+		?>
+    </div>
+    <div class="centerDiv">
+        <button class="optionResponsive" id="signupSide" onclick="window.location.href='signup.php'">
+            Signup
+        </button>
+    </div>
 </div>
 <div id="searchOverlay">
     <h1 id="overlayText">
@@ -42,10 +70,11 @@
     </h1>
 	<form id="searchForm" method="post" action="<?php echo htmlspecialchars('workpage.php');?>">
 	</form>
-    <input form="searchForm" id="searchBar" placeholder="Find a project to work on now!">
+    <input form="searchForm" id="searchBar" name="searchTerm" placeholder="Find a project to work on now!">
 	<button type="submit" form="searchForm" id="searchButton" onclick="openSearch()"><i class="fa fa-search"></i></button>
     <button onclick="searchOverlayOff(); openSearch();" id="searchClose">Close</button>
 </div>
+<div id="blur">
 <div class="container" id="createContainer">
     <div id="create">
         <h2 id="createInfo">
@@ -117,5 +146,6 @@
     </div>
 </div>
 <canvas id="canvas" height="100%" width="100%"></canvas>
+</div>
 </body>
 </html>

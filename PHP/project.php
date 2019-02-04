@@ -21,31 +21,57 @@
     <a class="option active" href="./index.php">
         Project University
     </a>
-    <a class="option" href="./login.php">
+	<?php
+	session_start();
+	include "connect.php";
+	if(isset($_SESSION['user'])){
+	?>
+    <a class="option" href="logout.php">
+        Logout
+    </a>
+	<?php
+	}else{
+	?>
+    <a class="option" href="login.php">
         Login
     </a>
-    <a class="option" href="./signup.php">
+    <a class="option" href="signup.php">
         Signup
     </a>
+	}
+	<?php
+	}
+	?>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 <div class="side" id="sideResponsive">
     <div class="centerDiv">
-        <button class="optionResponsive" id="loginSide">
+		<?php
+		if(isset($_SESSION['user'])){
+		?>
+		<a class="optionResponsive" id="loginSide" onclick="window.location.href='logout.php'">
+			Logout
+		</a>
+		<?php
+		}else{
+		?>
+        <button class="optionResponsive" id="loginSide" onclick="window.location.href='login.php'">
             Login
         </button>
+		<?php
+		}
+		?>
     </div>
     <div class="centerDiv">
-        <button class="optionResponsive" id="signupSide">
+        <button class="optionResponsive" id="signupSide" onclick="window.location.href='signup.php'">
             Signup
         </button>
     </div>
 </div>
+<div id="blur">
   <?php
-  include 'includes/connect.php';
-  session_start();
   $client = $_SESSION['user'];
   $id = $_GET['id'];
   $query = "SELECT * FROM user_project_info WHERE id='$id'";
@@ -73,11 +99,11 @@ function claim(){
 <div id="layerCreate">
     <div id="titleBoxProfile">
         <div class="bigTitle"><?php echo $projName; ?></div><br><br>
-        <div class="smallTitle">Requested <?php echo "Date published ".$date; ?> by <a href=""><?php echo $user ?></a></div><br>
+        <div class="smallTitle">Requested <?php echo $date; ?> by <a href=""><?php echo $user ?></a></div><br>
     </div>
 	<div class="bigSubtitle">Description</div>
     <div class="descriptBox">
-        <div class="descript"><?php echo $description; ?><br><br>Contact Info:<br>{Contact Info they inputed}</div>
+        <div class="descript"><?php echo $description; ?>
     </div>
 	<div class="centerDiv">
 		<form method="post" id="form1"></form>
@@ -195,7 +221,7 @@ rmdir($filename);
 	</div>
 
 </div>
-
+</div>
 <canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>
 <script type="text/javascript" src="../JS/sideParticles.js"></script>
 

@@ -28,28 +28,56 @@
     <a class="option active" href="./index.php">
         Project University
     </a>
-    <a class="option" href="./login.php">
+	<?php
+	session_start();
+	include "connect.php";
+	if(isset($_SESSION['user'])){
+	?>
+    <a class="option" href="logout.php">
+        Logout
+    </a>
+	<?php
+	}else{
+	?>
+    <a class="option" href="login.php">
         Login
     </a>
-    <a class="option" href="./signup.php">
+    <a class="option" href="signup.php">
         Signup
     </a>
+	}
+	<?php
+	}
+	?>
     <a href="javascript:void(0);" class="icon" onclick="expand()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 <div class="side" id="sideResponsive">
-    <a class="optionResponsive">
-        Login
-    </a>
-    <a class="optionResponsive">
-        Signup
-    </a>
-    <a class="optionResponsive">
-        About
-    </a>
+    <div class="centerDiv">
+		<?php
+		if(isset($_SESSION['user'])){
+		?>
+		<a class="optionResponsive" id="loginSide" onclick="window.location.href='logout.php'">
+			Logout
+		</a>
+		<?php
+		}else{
+		?>
+        <button class="optionResponsive" id="loginSide" onclick="window.location.href='login.php'">
+            Login
+        </button>
+		<?php
+		}
+		?>
+    </div>
+    <div class="centerDiv">
+        <button class="optionResponsive" id="signupSide" onclick="window.location.href='signup.php'">
+            Signup
+        </button>
+    </div>
 </div>
-
+<div id="blur">
 <div id="layerOne"></div>
 <div id="layerSignup">
     <div class="topTitleContainer">
@@ -94,14 +122,13 @@
         </div>
 </div>
 </div>
+</div>
 <canvas id="canvas" height="100%" width="100%" style="bottom: -0%;"></canvas>
 
 
 
 
 <?php
-session_start();
-include "connect.php";
 
 if(isset($_POST['login'])){
 	//normal sign-in
@@ -113,7 +140,9 @@ if(isset($_POST['login'])){
 	if($result->num_rows > 0){
 		// output data of each row
 		$_SESSION['user']=$user;
-		header('location: homepage.php');
+			?>
+			<script type="text/javascript">window.location.href = 'index.php';</script>
+			<?php
 	}else{
 		echo "Incorrect username or password";
 	}
@@ -126,7 +155,9 @@ if(isset($_POST['create'])){
 	$email = $_POST['email'];
 	$c_pass = $_POST['c_pass'];
 	if($pass!=$c_pass){
-		header('location: login.php');
+			?>
+			<script type="text/javascript">window.location.href = 'signup.php';</script>
+			<?php
 	}else{
 		$sql="SELECT username FROM login where username='$user'";
 		$result = $conn->query($sql);
@@ -142,7 +173,7 @@ if(isset($_POST['create'])){
 			mkdir('uploads/'.$user);
 			$_SESSION['user']=$user;
 			?>
-			<script type="text/javascript">window.location.href = 'homepage.php';</script>
+			<script type="text/javascript">window.location.href = 'index.php';</script>
 			<?php
 		}else{
 			echo "Username Taken";
