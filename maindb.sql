@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2019 at 02:50 AM
+-- Generation Time: Feb 04, 2019 at 01:02 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -42,7 +42,11 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 (1, 'lol', 'yolo'),
 (3, 'AryanG123', 'w'),
 (4, 'a', 'a'),
-(5, 's', 's');
+(5, 's', 's'),
+(6, 'a', 'a'),
+(7, 'lastname', ''),
+(8, 'lastname', 'pass'),
+(9, 'lastname', 'pass');
 
 -- --------------------------------------------------------
 
@@ -55,18 +59,21 @@ CREATE TABLE `userinfo` (
   `name` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
   `username` varchar(60) NOT NULL,
-  `claimedProj` text NOT NULL
+  `claimedProj` text NOT NULL,
+  `github` tinytext NOT NULL,
+  `bio` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`id`, `name`, `email`, `username`, `claimedProj`) VALUES
-(1, 'ME', 'lol@lol.com', 'goble', ''),
-(4, 'Aryan Gajelli', 'aryangajelli@yahoo.com', 'AryanG123', ''),
-(5, 'a', 'a@a.com', 'a', 'Hello,Hello,Hello,Hello,Hello,Hello,Hello,Hello,Hello,'),
-(10, 's', 'azfarchoudhry@gmail.com', 's', 'reee,reee,reee,reee,reee,reee,reee,Hello,Hello,Hello,');
+INSERT INTO `userinfo` (`id`, `name`, `email`, `username`, `claimedProj`, `github`, `bio`) VALUES
+(1, 'ME', 'lol@lol.com', 'goble', '', '', ''),
+(4, 'Aryan Gajelli', 'aryangajelli@yahoo.com', 'AryanG123', '', '', ''),
+(5, 'a', 'a@a.com', 'a', 'Hello,', '', ''),
+(15, 'azfar', 'azfarchoudhry@gmail.com', 'azfar', '', '', ''),
+(18, 'firstname', 'email@email.com', 'lastname', 'Hello,download test,sadmfnaskdjfnsdajlfnasdfa,testsetsetseg,', 'github.com/myusername', 'bio bio bio v v bio vbiobiobiobiobiobio');
 
 -- --------------------------------------------------------
 
@@ -89,11 +96,13 @@ CREATE TABLE `user_project_info` (
 --
 
 INSERT INTO `user_project_info` (`id`, `host`, `client`, `project_name`, `comments`, `creation`, `claimers`) VALUES
-(1, 'lol', 'Aryan', 'Hello', 'testing', '2019-01-16 00:05:14', ''),
+(1, 'lol', 'Aryan', 'Hello', 'testing', '2019-02-03 22:33:34', 'a,lastname,'),
 (2, 'a', 'reeeeeeeeeee', 'reee', 'askldasdljsadlksjdreeeeeeeeeeeee', '2019-01-16 00:05:14', ''),
-(3, 'a', '', '', '', '2019-01-31 23:04:04', ''),
-(4, 'a', '', '', '', '2019-01-31 23:04:19', ''),
-(5, 'a', '', '', '', '2019-01-31 23:05:57', '');
+(66, 'a', '', 'adasd', 'asdsad', '2019-02-02 04:21:34', 'a,a,a,a,a,'),
+(67, 'a', '', 'download test', 'test the download test the download test the download test the download v test the download', '2019-02-03 22:33:39', 'lastname,'),
+(68, 'a', '', 'multiple file download', 'multiple file downloadmultiple file downloadmultiple file downloadmultiple file downloadmultiple file downloadmultiple file downloadmultiple file download', '2019-02-02 17:11:44', ''),
+(69, 'a', '', 'sadmfnaskdjfnsdajlfnasdfa', 'adfasdfafjadkfsdkafjl', '2019-02-03 22:33:50', 'lastname,lastname,'),
+(70, 'a', '', 'testsetsetseg', 'asdfafdaf', '2019-02-03 22:33:55', 'lastname,');
 
 --
 -- Indexes for dumped tables
@@ -127,19 +136,19 @@ ALTER TABLE `user_project_info`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user_project_info`
 --
 ALTER TABLE `user_project_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
