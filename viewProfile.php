@@ -23,6 +23,11 @@ $email = $row['email'];
 $uname = $row['username'];
 $github = $row['github'];
 $bio = $row['bio'];
+$_SESSION['name'] = $row['name'];
+$_SESSION['email']= $row['email'];
+$_SESSION['uname'] = $row['username'];
+$_SESSION['github'] = $row['github'];
+$_SESSION['bio'] = $row['bio'];
 $claimed = explode(",",$row['claimedProj']);
 
 $projects2 = array();
@@ -68,3 +73,7 @@ for($i=0;$i<count($claimed)-1;$i++){
 
 ?>
 </table>
+<form action="updateProfile.php" method="post">
+  <input type="submit" name="upProfile" value="Update Your Profile"><br>
+  <input type="submit" name="homepage" value="Homepage" formaction="homepage.php">
+</form>
