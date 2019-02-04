@@ -10,7 +10,7 @@ let toolbarOptions = [
     [{ 'direction': 'rtl' }],                         // text direction
 
     [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-    //[{ 'header': [1, 2, 3, 4, 5, 6, false] }], //disable header sizes cus those break the displaying announcements
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }], //disable header sizes cus those break the displaying announcements
 
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
     [{ 'font': [] }],
@@ -23,16 +23,16 @@ let toolbarOptions = [
 
 let toolbarOptionsLimited = [
 
-    //['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    // ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     //['blockquote', 'code-block'],
 
-    //[{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    //[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
     [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
     [{ 'direction': 'rtl' }],                         // text direction
 
-    //[{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
     //[{ 'header': [1, 2, 3, 4, 5, 6, false] }], //disable header sizes cus those break the displaying announcements
 
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
@@ -48,7 +48,12 @@ var quillEditor = new Quill("#editorBox", {
     toolbar: [
       [{ header: [1, 2, false] }],
       ['bold', 'italic', 'underline'],
-      ['image', 'code-block']
+      ['image', 'code-block'],
+      [{ 'header': 1 }, { 'header': 2 }],
+      [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+      [{ 'font': [] }],
+      [{ 'size': ['small', false, 'large', 'huge'] }]  // custom dropdown
+
     ]
   },
   placeholder: 'Description',
@@ -66,6 +71,3 @@ var quillContact = new Quill("#editorContact", {
   placeholder: 'Contact and other Info',
   theme: 'snow'  // or 'bubble'
 });
-
-
-

@@ -74,8 +74,11 @@
     <div id="titleBoxProfile">
         <div class="signTitle">Create Account</div>
     </div>
+    <div id="titleBoxProfile" style="width:15%; margin-top:0px; ">
+        <div class="smallTitle titleUnderline">Description</div>
+    </div>
 	<div class="editContainor">
-		<div id="editorBox" class="profileQuill"><p> <!-- USERS TYPE INTO THIS --> </p></div>
+		<div id="editorBox" class="profileQuill"><p> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><!-- USERS TYPE INTO THIS --> </p></div>
 		</div>
     <div id="contentProfile">
         <div id="openPref" class="titleUnderline" onclick="prefOpen()"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>   More</div>
@@ -92,10 +95,10 @@
 			<div class="profileNameBox">
 				<h2 id="profileName"><?php echo $_SESSION['user']; ?></h2>
 			</div>
-			<form id="createForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-				<input  placeholder="Name" class="indexInput" id="nickname" name="name">
-				<input  placeholder="Email" class="indexInput" id="profileEmail" name="email">
-				<input  placeholder="GitHub Link" class="indexInput" id="gitHubLink" name="github"><!--In case they want to display a link to their other projects maybe-->
+			<form id="createForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" >
+				<input  placeholder="Name" class="indexInput" id="nickname" name="name" style="top:50%;">
+				<input  placeholder="Email" class="indexInput" id="profileEmail" name="email"style="top:60%;">
+				<input  placeholder="GitHub Link" class="indexInput" id="gitHubLink" name="github"style="top:70%;"><!--In case they want to display a link to their other projects maybe-->
 				<input id="bioInput" type="hidden" name="bio" value="">
 			</form>
 		</div>

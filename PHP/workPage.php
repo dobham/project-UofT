@@ -77,7 +77,7 @@ $sql = "SELECT * FROM user_project_info";
 if(!empty($_POST['searchTerm'])){
 	echo "oi";
 	$searchTerm=$_POST['searchTerm'];
-	$sql .= " WHERE comments LIKE '%asdf%'";
+	$sql .= " WHERE comments LIKE '%$searchTerm%'";
 }
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
