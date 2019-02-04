@@ -173,7 +173,7 @@ if(isset($_POST['create'])){
 			mkdir('uploads/'.$user);
 			$_SESSION['user']=$user;
 			?>
-			<script type="text/javascript">window.location.href = 'index.php';</script>
+			<script type="text/javascript">window.location.href = 'accountCreate.php';</script>
 			<?php
 		}else{
 			echo "Username Taken";

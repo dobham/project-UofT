@@ -73,18 +73,24 @@
 <div id="blur">
 <div id="layerCreate">
     <div id="titleBoxProfile">
-        <div class="signTitle">Request A Project</div>
+        <div class="signTitle titleUnderline">Request A Project</div>
     </div>
-    <form id="postCreateForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
-        <input type="name" name="projectName" id="postTitle" class="indexInput" placeholder="Title">
-	<div id="editorBox"><p> <!-- USERS TYPE INTO THIS --> </p></div>
-	<div id="editorContact"><p> <!-- USERS TYPE INTO THIS --> </p></div>
-		<input id="descInput" type="hidden" name="comment" value="">
-		<input type="text" id="textBox" class="indexInput" name="tagger" placeholder="Tags"><br><br>
-		<input type="file" name="uploaded_file[]" id="fileToUpload" class="custom-file-input" multiple>
-		<div class="target" contenteditable="false"></div><br><br>
-		<button type="submit" name="Submit" id="submitPost" class="smallButton" action="" onclick="document.getElementById('descInput').value = document.getElementById('editorBox').children[0].innerHTML;">Go</button>
-    </form>
+	<div class="centerDiv">
+		<form id="postCreateForm" style="width: 50%; display: inline-block;" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
+			<h2 id="titleStuff" class="titleUnderline">Title</h2><br>
+			<input type="name" name="projectName" id="postTitle" class="indexInput" placeholder="Title">
+			<br><h2 id="titleStuff" class="titleUnderline">Description</h2><br>
+		<div id="editorBox" style="min-height: 5em;"><p> <!-- USERS TYPE INTO THIS --> </p></div>
+		<!--<div id="editorContact"><p> <!-- USERS TYPE INTO THIS  </p></div>-->
+			<input id="descInput" type="hidden" name="comment" value="">
+			<br><h2 id="titleStuff" class="titleUnderline">Tags</h2><br>
+			<input type="text" id="textBox" class="indexInput" name="tagger" placeholder="Tags"><br><br>
+			<br><h2 id="titleStuff" class="titleUnderline">Files</h2><br>
+			<input type="file" name="uploaded_file[]" id="fileToUpload" class="custom-file-input" multiple>
+			<div class="target" contenteditable="false"></div><br><br>
+			<button type="submit" name="Submit" id="submitPost" class="smallButton" action="" onclick="document.getElementById('descInput').value = document.getElementById('editorBox').children[0].innerHTML;">Go</button>
+		</form>
+	</div>
 </div>
 <!--
 <form action="" method="post" enctype="multipart/form-data">

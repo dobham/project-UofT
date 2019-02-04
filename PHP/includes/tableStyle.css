@@ -33,7 +33,7 @@ tr:nth-last-child(1){
 }
 table {
 	table-layout: fixed;
-	margin: 5vw;
+	margin: 5%;
 	width: 90%;
 	text-align: center;
 	border-collapse: collapse;
