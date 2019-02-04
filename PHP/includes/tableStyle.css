@@ -28,18 +28,14 @@ tr{
 tr:nth-child(odd):hover {
    background-color: #40e080;
 }
-tr:nth-last-child(1){
-  border-radius: 0px 0px 6px 0px ;
-}
-table {
-	table-layout: fixed;
-	margin: 5vw;
-	width: 90%;
-	text-align: center;
-	border-collapse: collapse;
-	border-radius:6px;
-	border:solid white 1px;
-	padding: 0.2%;
+ table {
+     vertical-align: bottom;
+     text-align: center;
+     border-collapse: collapse;
+     border-radius:6px;
+     border:solid white 1px;
+     padding: 0.2%;
+
 }
  th, td {
      padding: 2%;
@@ -51,15 +47,15 @@ table{
   border-radius:10px;
   -moz-border-radius:6px;
 }
-td:nth-child(3){
+td:nth-last-child(1){
   border-radius: 0px 0px 6px 0px ;
 }
-td:nth-child(1){
+td:nth-last-child(4){
   border-radius: 0px 0px 0px 6px ;
 }
 th:nth-child(1){
   border-radius: 6px 0px 0px 0px ;
 }
-th:nth-child(3){
+th:nth-child(4){
   border-radius: 0px 6px 0px 0px ;
 }
