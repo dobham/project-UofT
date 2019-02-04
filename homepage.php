@@ -15,7 +15,6 @@
 		include "connect.php";
 		  $sql= "SELECT username FROM userinfo WHERE username='$user'";
 			if ($conn->query($sql)) {
-				$row = $conn->query($sql);
 				$row = $conn->query($sql)->fetch_assoc();
 				if($row['username']==""){
 						$sql = "INSERT INTO userinfo (name, username, email) VALUES ('$user','$user','$email')";
@@ -40,6 +39,7 @@
 		<input type="submit" name="logout" value="logout">
 		<input type="submit" name="createProject" value="Create A Project" formaction="createProject.php">
 		<input type="submit" name="claimProject" value="Claim a Project" formaction="workPage.php">
+		<input type="submit" name="profile" value="Profile" formaction="viewProfile.php">
 	</form>
 </body>
 </html>

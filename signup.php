@@ -3,6 +3,8 @@
 	<input type="name" name="name" placeholder="Enter name"><br>
 	<input type="name" name="user" placeholder="Enter username"><br>
 	<input type="email" name="email" placeholder="Enter Email"><br>
+	<input type="text" name="github" placeholder="GitHub Link"><br>
+	<textarea name = "bio"></textarea><br>
 	<input type="password" name="pass" placeholder="Enter password" id="pass" onkeyup='check();'><br>
 	<input type="password" name="c_pass" placeholder="Confirm password" id="c_pass" onkeyup='check();'><span id='message' ></span><br>
 	<input type="submit" name="create" value="Sign-Up">
@@ -22,17 +24,19 @@
 <?php
 	include "connect.php";
 	if(isset($_POST['create'])){
-		
+
 		$name = $_POST['name'];
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
+		$github = $_POST['github'];
 		$email = $_POST['email'];
 		$c_pass = $_POST['c_pass'];
+		$bio = $_POST['bio'];
 		if($pass!=$c_pass){
 			header('location: signup.php');
 		}
 		$sql = "INSERT INTO login (username, password) VALUES ('$user','$pass');";
-		$sql .= "INSERT INTO userinfo (name, username, email) VALUES ('$name','$user','$email')";
+		$sql .= "INSERT INTO userinfo (name, username, email, github, bio) VALUES ('$name','$user','$email','$github', '$bio')";
 
 		if ($conn->multi_query($sql) === TRUE) {
 	    	echo "New records created successfully";
